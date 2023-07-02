@@ -402,7 +402,7 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
 
 
               ),
-              SizedBox(height: MediaQuery.of(context).size.height/50,),
+              SizedBox(height: MediaQuery.of(context).size.height/30,),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width/20),
                 child: Container(
@@ -483,6 +483,39 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
 
             ],
           ),
+        ),
+      ),
+      bottomNavigationBar: Container(
+        height: 50,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Colors.yellow.withOpacity(0.6),
+              Colors.green.withOpacity(0.6)
+            ],
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+          ),
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
+          )
+        ),
+        child: Row(
+          children: [
+
+            SizedBox(width: 15,),
+            Padding(padding: EdgeInsets.symmetric(horizontal: 20),child: FaIcon(FontAwesomeIcons.homeUser,color: Colors.white,size: 27,),),
+            SizedBox(width: MediaQuery.of(context).size.width/30,),
+            Padding(padding: EdgeInsets.symmetric(horizontal: 20),child: FaIcon(FontAwesomeIcons.solidBell,color: Colors.white,size: 27,),),
+            SizedBox(width: MediaQuery.of(context).size.width/30,),
+            Padding(padding: EdgeInsets.symmetric(horizontal: 20),child: FaIcon(FontAwesomeIcons.add,color: Colors.orange,size: 27,),),
+            SizedBox(width: MediaQuery.of(context).size.width/30,),
+            Padding(padding: EdgeInsets.symmetric(horizontal: 20),child: FaIcon(FontAwesomeIcons.solidSun,color: Colors.white,size: 27,),),
+            SizedBox(width: MediaQuery.of(context).size.width/30,),
+            Padding(padding: EdgeInsets.symmetric(horizontal: 20),child: FaIcon(FontAwesomeIcons.person,color: Colors.white,size: 27,),),
+
+          ],
         ),
       ),
 
