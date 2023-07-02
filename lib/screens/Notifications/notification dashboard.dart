@@ -498,40 +498,36 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
         ),
       ),
       bottomNavigationBar: Container(
-        height: 50,
+        //color: Colors.deepOrangeAccent.withOpacity(0.4),
+        height: 60,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
               Colors.blue.withOpacity(0.6),
               Colors.purpleAccent.withOpacity(0.6)
             ],
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
           ),
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20),
+          borderRadius: const BorderRadius.only(
             topRight: Radius.circular(20),
-          )
-        ),
-        child: Row(
-          children: [
+            topLeft: Radius.circular(20),
 
-            SizedBox(width: 15,),
+          ),
+        ),
+        child:  Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
             GestureDetector(
               onTap: (){
                 Navigator.pop(context);
               },
-                child: Padding(padding: EdgeInsets.symmetric(horizontal: 20),child: FaIcon(FontAwesomeIcons.homeUser,color: Colors.white,size: 27,),),
+              child: FaIcon(FontAwesomeIcons.home,color: Colors.white,size: 20,),
             ),
-            SizedBox(width: MediaQuery.of(context).size.width/30,),
-            Padding(padding: EdgeInsets.symmetric(horizontal: 20),child: FaIcon(FontAwesomeIcons.solidBell,color: Colors.white,size: 27,),),
-            SizedBox(width: MediaQuery.of(context).size.width/30,),
-            Padding(padding: EdgeInsets.symmetric(horizontal: 20),child: FaIcon(FontAwesomeIcons.add,color: Colors.orange,size: 27,),),
-            SizedBox(width: MediaQuery.of(context).size.width/30,),
-            Padding(padding: EdgeInsets.symmetric(horizontal: 20),child: FaIcon(FontAwesomeIcons.solidSun,color: Colors.white,size: 27,),),
-            SizedBox(width: MediaQuery.of(context).size.width/30,),
-            Padding(padding: EdgeInsets.symmetric(horizontal: 20),child: FaIcon(FontAwesomeIcons.person,color: Colors.white,size: 27,),),
-
+            FaIcon(FontAwesomeIcons.bell,color: Colors.white,size: 20,),
+            CircleAvatar(radius: 26,
+              backgroundColor: Colors.white,child: FaIcon(FontAwesomeIcons.add,color: Colors.orangeAccent,size: 20,),
+            ),
+            FaIcon(FontAwesomeIcons.sun,color: Colors.white,size: 20,),
+            Icon(Icons.person,color: Colors.white,)
           ],
         ),
       ),
@@ -539,3 +535,4 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
     );
   }
 }
+
