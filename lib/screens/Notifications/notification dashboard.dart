@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:notification_app/screens/MainDashBoard/Dashboard.dart';
 
 class NotificationDashboard extends StatefulWidget {
   const NotificationDashboard({super.key});
@@ -104,6 +105,8 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
                                 Center(
                                   child: Text('Apply Here',style: TextStyle(
                                       color: Colors.white,
+                                      fontFamily: "K-Thin",
+                                      fontWeight: FontWeight.bold,
                                       fontSize: 18
                                   ),),
                                 ),
@@ -175,9 +178,11 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
                                 height: MediaQuery.of(context).size.height/23,
                                 child: Row(
                                   children: [
-                                    SizedBox(width: 10,),
+                                    SizedBox(width: 16,),
                                     Center(
                                       child: Text('Join Now',style: TextStyle(
+                                        fontFamily: 'K-ThinItalic',
+                                          fontWeight: FontWeight.bold,
                                           color: Colors.white,
                                           fontSize: 15
                                       ),),
@@ -190,68 +195,6 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
                       ),
                     ),
 
-                    SizedBox(width: MediaQuery.of(context).size.width/20,),
-                    Container(
-
-                      width: MediaQuery.of(context).size.width/2,
-                      decoration: BoxDecoration(
-
-                          borderRadius:BorderRadius.all(Radius.circular(20)),
-                          gradient: LinearGradient(
-                            colors:[
-                              Colors.yellow.withOpacity(0.8),
-                              Colors.greenAccent.withOpacity(0.9)
-                            ],
-                            begin: Alignment.topRight,
-                            end: Alignment.bottomLeft,
-                          ),
-                          image: DecorationImage(
-
-                              scale: 5,
-                              opacity: 0.6,
-                              alignment: Alignment.centerRight,
-                              image: AssetImage('assets/images/progress.png')
-                          )
-
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(height: 20,),
-                          Padding(
-
-                            padding: EdgeInsets.symmetric(horizontal: 10),
-                            child: Text('PROGRESS',style: TextStyle(
-                                color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold
-                            ),),
-
-                          ),
-                          SizedBox(height: 13,),
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 14),
-                            child:Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.purpleAccent.withOpacity(0.8),
-                                    borderRadius: BorderRadius.all(Radius.circular(10))
-                                ),
-                                width: MediaQuery.of(context).size.height/9.6,
-                                height: MediaQuery.of(context).size.height/23,
-                                child: Row(
-                                  children: [
-                                    SizedBox(width: 10,),
-                                    Center(
-                                      child: Text('  Check ',style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 15
-                                      ),),
-                                    ),
-                                  ],
-                                )
-                            ) ,),
-
-                        ],
-                      ),
-                    ),
 
                     SizedBox(width: MediaQuery.of(context).size.width/20,),
                     Container(
@@ -301,10 +244,12 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
                                 height: MediaQuery.of(context).size.height/23,
                                 child: Row(
                                   children: [
-                                    SizedBox(width: 10,),
+                                    SizedBox(width: 16,),
                                     Center(
                                       child: Text('Apply Here',style: TextStyle(
                                           color: Colors.white,
+                                          fontFamily: "K-ThinItalic",
+                                          fontWeight: FontWeight.bold,
                                           fontSize: 15
                                       ),),
                                     ),
@@ -315,6 +260,71 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
                         ],
                       ),
                     ),
+                    SizedBox(width: MediaQuery.of(context).size.width/20,),
+                    Container(
+
+                      width: MediaQuery.of(context).size.width/2,
+                      decoration: BoxDecoration(
+
+                          borderRadius:BorderRadius.all(Radius.circular(20)),
+                          gradient: LinearGradient(
+                            colors:[
+                              Colors.yellow.withOpacity(0.8),
+                              Colors.greenAccent.withOpacity(0.9)
+                            ],
+                            begin: Alignment.topRight,
+                            end: Alignment.bottomLeft,
+                          ),
+                          image: DecorationImage(
+
+                              scale: 5,
+                              opacity: 0.6,
+                              alignment: Alignment.centerRight,
+                              image: AssetImage('assets/images/progress.png')
+                          )
+
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(height: 20,),
+                          Padding(
+
+                            padding: EdgeInsets.symmetric(horizontal: 10),
+                            child: Text('PROGRESS',style: TextStyle(
+                                color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold
+                            ),),
+
+                          ),
+                          SizedBox(height: 13,),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 14),
+                            child:Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.purpleAccent.withOpacity(0.8),
+                                    borderRadius: BorderRadius.all(Radius.circular(10))
+                                ),
+                                width: MediaQuery.of(context).size.height/9.6,
+                                height: MediaQuery.of(context).size.height/23,
+                                child: Row(
+                                  children: [
+                                    SizedBox(width: 13,),
+                                    Center(
+                                      child: Text('  Check ',style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 15,
+                                        fontFamily: "K-ThinItalic",
+                                        fontWeight: FontWeight.bold,
+                                      ),),
+                                    ),
+                                  ],
+                                )
+                            ) ,),
+
+                        ],
+                      ),
+                    ),
+
 
                   ],
                 ),
@@ -385,7 +395,8 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
                                     SizedBox(width: 10,),
                                     Text('Test It Now', style: TextStyle(
                                       color: Colors.white,
-                                      fontSize: 15,
+                                      fontFamily: "K-Bold",
+                                      fontSize: 18,
 
                                     ),textAlign: TextAlign.center,),
                                   ],
@@ -460,7 +471,8 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
                                     SizedBox(width: 10,),
                                     Text('Test It Now', style: TextStyle(
                                       color: Colors.white,
-                                      fontSize: 15,
+                                      fontFamily: "K-Bold",
+                                      fontSize: 18,
 
                                     ),textAlign: TextAlign.center,),
                                   ],
@@ -477,7 +489,7 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
 
 
               ),
-              
+              SizedBox(height: MediaQuery.of(context).size.height/30,),
 
 
 
@@ -490,8 +502,8 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Colors.yellow.withOpacity(0.6),
-              Colors.green.withOpacity(0.6)
+              Colors.blue.withOpacity(0.6),
+              Colors.purpleAccent.withOpacity(0.6)
             ],
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
@@ -505,7 +517,12 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
           children: [
 
             SizedBox(width: 15,),
-            Padding(padding: EdgeInsets.symmetric(horizontal: 20),child: FaIcon(FontAwesomeIcons.homeUser,color: Colors.white,size: 27,),),
+            GestureDetector(
+              onTap: (){
+                Navigator.pop(context);
+              },
+                child: Padding(padding: EdgeInsets.symmetric(horizontal: 20),child: FaIcon(FontAwesomeIcons.homeUser,color: Colors.white,size: 27,),),
+            ),
             SizedBox(width: MediaQuery.of(context).size.width/30,),
             Padding(padding: EdgeInsets.symmetric(horizontal: 20),child: FaIcon(FontAwesomeIcons.solidBell,color: Colors.white,size: 27,),),
             SizedBox(width: MediaQuery.of(context).size.width/30,),

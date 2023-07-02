@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:notification_app/screens/Notifications/notification%20dashboard.dart';
 
 class MainDashboard extends StatelessWidget {
   const MainDashboard({super.key});
@@ -20,8 +21,7 @@ class MainDashboard extends StatelessWidget {
             borderRadius: const BorderRadius.only(
                 topRight: Radius.circular(20),
                 topLeft: Radius.circular(20),
-                bottomLeft: Radius.circular(20),
-                bottomRight: Radius.circular(20)
+
             ),
           ),
           child: const Row(
@@ -99,6 +99,7 @@ class MainDashboard extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Text("WELCOME \nBACK", style: TextStyle(
+                                //fontFamily: "K-Bold",
                                 color: Colors.white,fontWeight: FontWeight.bold,
                                 fontSize: 20,
                               ),),
@@ -160,6 +161,7 @@ class MainDashboard extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Text("Follow Us", style: TextStyle(
+                                fontFamily: "K-Bold",
                                 color: Colors.white,fontWeight: FontWeight.bold,
                                 fontSize: 20,
                               ),),
@@ -229,6 +231,7 @@ class MainDashboard extends StatelessWidget {
                                mainAxisAlignment: MainAxisAlignment.center,
                                children: [
                                  Text("Learn Flutter", style: TextStyle(
+                                   fontFamily: "K-Bold",
                                    color: Colors.white,fontWeight: FontWeight.bold,
                                    fontSize: 20,
                                  ),),
@@ -243,69 +246,71 @@ class MainDashboard extends StatelessWidget {
                    ),
                  ),
                  SizedBox(height: MediaQuery.of(context).size.height/120,),
-                 Padding(
-                   padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width/20),
-                   child: Container(
-                       decoration: BoxDecoration(
-                           color: Colors.cyanAccent,
-                           borderRadius: const BorderRadius.all(Radius.circular(20)),
-                           gradient: LinearGradient(
-                               colors: [
+                 GestureDetector(
+                   onTap: (){
+                     Navigator.push(context, MaterialPageRoute(builder: (context)=>const NotificationDashboard()));
+                   },
+                   child: Padding(
+                     padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width/20),
+                     child: Container(
+                         decoration: BoxDecoration(
+                             color: Colors.cyanAccent,
+                             borderRadius: const BorderRadius.all(Radius.circular(20)),
+                             gradient: LinearGradient(
+                                 colors: [
 
-                                 Colors.blue.withOpacity(0.5),
-                                 Colors.cyanAccent.withOpacity(0.3)
-                               ],
-                               begin: Alignment.centerLeft,
-                               end: Alignment.centerRight
-                           ),
-                           boxShadow: const [
-                             BoxShadow(
-                               color: Colors.black12,
-                               blurRadius: 2,
-                               spreadRadius: 2,
+                                   Colors.blue.withOpacity(0.5),
+                                   Colors.cyanAccent.withOpacity(0.3)
+                                 ],
+                                 begin: Alignment.centerLeft,
+                                 end: Alignment.centerRight
+                             ),
+                             boxShadow: const [
+                               BoxShadow(
+                                 color: Colors.black12,
+                                 blurRadius: 2,
+                                 spreadRadius: 2,
+                               )
+                             ],
+                             image: const DecorationImage(
+                               opacity: 0.3,
+                               image: AssetImage('assets/images/notification.png'),
                              )
-                           ],
-                         image: const DecorationImage(
-                           opacity: 0.3,
-                           image: AssetImage('assets/images/notification.png'),
-                         )
-                       ),
-                       height: MediaQuery.of(context).size.height/4.2,
-                       width: MediaQuery.of(context).size.width/2.6,
-                       child:Padding(
-                         padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width/40),
-                         child: Column(
-
-                           crossAxisAlignment: CrossAxisAlignment.start,
-                           children: [
-                             SizedBox(height: MediaQuery.of(context).size.height/28,),
-                             Row(
-                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                               children: [
-                               FaIcon(
-                                 FontAwesomeIcons.newspaper,
-                                 size: MediaQuery.of(context).size.height/15,
-                                 color: Colors.white60,
-                               ),
-                                 const SizedBox(),const SizedBox(),
-                             ],),
-                             SizedBox(height: MediaQuery.of(context).size.height/20,),
-                             const Row(
-                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                               children: [
-                                 Text("Notifications\nHandling", style: TextStyle(
-                                   color: Colors.white,fontWeight: FontWeight.bold,
-                                   fontSize: 18,
-                                 ),),
-                                 FaIcon(FontAwesomeIcons.arrowRight,color: Colors.white,size: 18,),
-                               ],
-                             )
-                           ],
                          ),
-                       )
+                         height: MediaQuery.of(context).size.height/4.2,
+                         width: MediaQuery.of(context).size.width/2.6,
+                         child:Padding(
+                           padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width/40),
+                           child: Column(
 
+                             crossAxisAlignment: CrossAxisAlignment.start,
+                             children: [
+                               SizedBox(height: MediaQuery.of(context).size.height/28,),
+                               Row(
+                                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                 children: [
+                                   SizedBox(height: MediaQuery.of(context).size.height/12,),
+                                   const SizedBox(),const SizedBox(),
+                                 ],),
+                               SizedBox(height: MediaQuery.of(context).size.height/20,),
+                               const Row(
+                                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                 children: [
+                                   Text("Notifications\nHandling", style: TextStyle(
+                                     color: Colors.white,fontWeight: FontWeight.bold,
+                                     fontFamily: "Bold",
+                                     fontSize: 18,
+                                   ),),
+                                   FaIcon(FontAwesomeIcons.arrowRight,color: Colors.white,size: 18,),
+                                 ],
+                               )
+                             ],
+                           ),
+                         )
+
+                     ),
                    ),
-                 ),
+                 )
                ],
              )
             ],
@@ -316,7 +321,8 @@ class MainDashboard extends StatelessWidget {
               SizedBox(height: MediaQuery.of(context).size.height/1.8,),
               const Padding(padding: EdgeInsets.symmetric(horizontal: 15),child: Text("Join CPC COMMUNITY",style: TextStyle(
                   fontSize: 30,
-                  fontWeight: FontWeight.bold,color: Colors.black
+                  fontFamily: "Bold",
+                  fontWeight: FontWeight.bold,color: Colors.cyan
               ),),),
               SizedBox(height: MediaQuery.of(context).size.height/25,),
               Padding(
@@ -358,6 +364,7 @@ class MainDashboard extends StatelessWidget {
                       children: [
                         const SizedBox(width: 10,),
                         const Text('Be Part Of Biggest \nTech Community \nof Peshawar',style: TextStyle(
+                          fontFamily: "K-Thin",
                             color: Colors.white,
                             fontWeight: FontWeight.w600,
                             fontSize: 18
@@ -376,6 +383,8 @@ class MainDashboard extends StatelessWidget {
                         SizedBox(width: 20,),
                         Text('APPLICATIONS ARE OPENED NOW ',style: TextStyle(
                           color: Colors.white,
+                          fontFamily: "K-ThinItalic",
+                          fontWeight: FontWeight.bold,
                           fontSize:14,
                         ),),
                         SizedBox(width: 30,),
