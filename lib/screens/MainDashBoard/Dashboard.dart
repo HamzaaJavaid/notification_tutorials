@@ -1,6 +1,8 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:notification_app/screens/Notifications/notification%20dashboard.dart';
+import 'package:animate_do/animate_do.dart';
 
 class MainDashboard extends StatelessWidget {
   const MainDashboard({super.key});
@@ -40,7 +42,7 @@ class MainDashboard extends StatelessWidget {
       body: Stack(
         children: [
           //1st Column Items
-          Column(
+          FadeInUp(child: Column(
             children: [
               SizedBox(height: MediaQuery.of(context).size.height/10,),
               Padding(
@@ -65,11 +67,11 @@ class MainDashboard extends StatelessWidget {
                             spreadRadius: 2,
                           )
                         ],
-                      image: const DecorationImage(
-                        image: AssetImage('assets/images/welcome.png',),
-                        scale: 4,
-                        opacity: 0.4
-                      )
+                        image: const DecorationImage(
+                            image: AssetImage('assets/images/welcome.png',),
+                            scale: 4,
+                            opacity: 0.4
+                        )
                     ),
                     height: MediaQuery.of(context).size.height/4,
                     width: MediaQuery.of(context).size.width/2.2,
@@ -84,14 +86,14 @@ class MainDashboard extends StatelessWidget {
                           Row(
                             children: [
                               SizedBox(width: MediaQuery.of(context).size.width/20,),
-                             const Opacity(
-                               opacity: 0.8,
-                               child: CircleAvatar(
-                                 radius: 30,
-                                 backgroundColor: Colors.transparent,
-                                // backgroundImage: AssetImage('assets/images/profilcPic.png',),
-                               ),
-                             )
+                              const Opacity(
+                                opacity: 0.8,
+                                child: CircleAvatar(
+                                  radius: 30,
+                                  backgroundColor: Colors.transparent,
+                                  // backgroundImage: AssetImage('assets/images/profilcPic.png',),
+                                ),
+                              )
                             ],
                           ),
                           SizedBox(height: MediaQuery.of(context).size.height/20,),
@@ -145,17 +147,17 @@ class MainDashboard extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           SizedBox(height: MediaQuery.of(context).size.height/30,),
-                         const Row(
-                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                           children: [
-                             SizedBox(),
-                             FaIcon(FontAwesomeIcons.facebook,color: Colors.white,size: 30,),
-                             FaIcon(FontAwesomeIcons.instagram,color: Colors.white,size: 30,),
-                             FaIcon(FontAwesomeIcons.youtube,color: Colors.white,size: 30,),
-                             FaIcon(FontAwesomeIcons.linkedin,color: Colors.white,size: 30,),
-                             SizedBox(),
-                           ],
-                         ),
+                          const Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              SizedBox(),
+                              FaIcon(FontAwesomeIcons.facebook,color: Colors.white,size: 30,),
+                              FaIcon(FontAwesomeIcons.instagram,color: Colors.white,size: 30,),
+                              FaIcon(FontAwesomeIcons.youtube,color: Colors.white,size: 30,),
+                              FaIcon(FontAwesomeIcons.linkedin,color: Colors.white,size: 30,),
+                              SizedBox(),
+                            ],
+                          ),
                           SizedBox(height: MediaQuery.of(context).size.height/40,),
                           const Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -175,11 +177,11 @@ class MainDashboard extends StatelessWidget {
                 ),
               ),
             ],
-          ),
+          ),duration: Duration(seconds: 2),),
           //2nd Column Items
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
+         FadeInUp(child:  Row(
+           mainAxisAlignment: MainAxisAlignment.end,
+           children: [
              Column(
                children: [
                  SizedBox(height: MediaQuery.of(context).size.height/10,),
@@ -187,24 +189,24 @@ class MainDashboard extends StatelessWidget {
                    padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width/20),
                    child: Container(
                        decoration: BoxDecoration(
-                           color: Colors.cyanAccent,
-                           borderRadius: const BorderRadius.all(Radius.circular(20)),
-                           gradient: LinearGradient(
-                               colors: [
+                         color: Colors.cyanAccent,
+                         borderRadius: const BorderRadius.all(Radius.circular(20)),
+                         gradient: LinearGradient(
+                             colors: [
 
-                                 Colors.greenAccent.withOpacity(0.4),
-                                 Colors.yellow.withOpacity(0.6)
-                               ],
-                               begin: Alignment.centerLeft,
-                               end: Alignment.centerRight
-                           ),
-                           boxShadow: const [
-                             BoxShadow(
-                               color: Colors.black12,
-                               blurRadius: 2,
-                               spreadRadius: 2,
-                             )
-                           ],
+                               Colors.greenAccent.withOpacity(0.4),
+                               Colors.yellow.withOpacity(0.6)
+                             ],
+                             begin: Alignment.centerLeft,
+                             end: Alignment.centerRight
+                         ),
+                         boxShadow: const [
+                           BoxShadow(
+                             color: Colors.black12,
+                             blurRadius: 2,
+                             spreadRadius: 2,
+                           )
+                         ],
                        ),
                        height: MediaQuery.of(context).size.height/6,
                        width: MediaQuery.of(context).size.width/2.6,
@@ -235,7 +237,7 @@ class MainDashboard extends StatelessWidget {
                                    color: Colors.white,fontWeight: FontWeight.bold,
                                    fontSize: 20,
                                  ),),
-                                                                ],
+                               ],
 
                              )
 
@@ -313,9 +315,9 @@ class MainDashboard extends StatelessWidget {
                  )
                ],
              )
-            ],
-          ),
-          Column(
+           ],
+         ),duration: Duration(seconds: 2),),
+          FadeInUp(child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: MediaQuery.of(context).size.height/1.8,),
@@ -328,25 +330,25 @@ class MainDashboard extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 43),
                 child: Container(
-                height: MediaQuery.of(context).size.height/5,
-                width: MediaQuery.of(context).size.width/1.2,
+                  height: MediaQuery.of(context).size.height/5,
+                  width: MediaQuery.of(context).size.width/1.2,
                   decoration: BoxDecoration(
 
-                    image: const DecorationImage(
-                      alignment: Alignment.topRight,
-                      opacity: 0.4,
-                      image: AssetImage('assets/images/2.png',),
-                    ),
-                    color: const Color.fromRGBO(72, 128, 217, 0.7),
+                      image: const DecorationImage(
+                        alignment: Alignment.topRight,
+                        opacity: 0.4,
+                        image: AssetImage('assets/images/2.png',),
+                      ),
+                      color: const Color.fromRGBO(72, 128, 217, 0.7),
                       borderRadius: const BorderRadius.all(Radius.circular(20)),
                       gradient: LinearGradient(
-                        colors: [
-                           //Color.fromRGBO(72, 128, 217, 0.9),
-                          Colors.cyanAccent.withOpacity(0.1),
-                          Colors.deepPurpleAccent.withOpacity(0.7)
-                        ],
-                        begin: Alignment.topRight,
-                        end: Alignment.bottomLeft
+                          colors: [
+                            //Color.fromRGBO(72, 128, 217, 0.9),
+                            Colors.cyanAccent.withOpacity(0.1),
+                            Colors.deepPurpleAccent.withOpacity(0.7)
+                          ],
+                          begin: Alignment.topRight,
+                          end: Alignment.bottomLeft
                       ),
                       boxShadow: const [
                         BoxShadow(
@@ -356,48 +358,50 @@ class MainDashboard extends StatelessWidget {
                         )
                       ]
                   ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    const SizedBox(),
-                    Row(
-                      children: [
-                        const SizedBox(width: 10,),
-                        const Text('Be Part Of Biggest \nTech Community \nof Peshawar',style: TextStyle(
-                          fontFamily: "K-Thin",
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      const SizedBox(),
+                      Row(
+                        children: [
+                          const SizedBox(width: 10,),
+                          const Text('Be Part Of Biggest \nTech Community \nof Peshawar',style: TextStyle(
+                              fontFamily: "K-Thin",
+                              color: Colors.white,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 18
+                          ),),
+                          Image.asset(
+                            "assets/images/cpc.png",
+                            height: MediaQuery.of(context).size.height/6,
+                            width: MediaQuery.of(context).size.width/4,
+                          ),
+
+                        ],
+                      ),
+                      const SizedBox(),const SizedBox(),const SizedBox(),const SizedBox(),
+                      const Row(
+                        children: [
+                          SizedBox(width: 20,),
+                          Text('APPLICATIONS ARE OPENED NOW ',style: TextStyle(
                             color: Colors.white,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 18
-                        ),),
-                        Image.asset(
-                          "assets/images/cpc.png",
-                          height: MediaQuery.of(context).size.height/6,
-                          width: MediaQuery.of(context).size.width/4,
-                        ),
+                            fontFamily: "K-ThinItalic",
+                            fontWeight: FontWeight.bold,
+                            fontSize:14,
+                          ),),
+                          SizedBox(width: 30,),
+                          FaIcon(FontAwesomeIcons.arrowRight,color: Colors.white,size: 22,)
+                        ],
+                      ),
+                    ],
+                  ),
 
-                      ],
-                    ),
-                    const SizedBox(),const SizedBox(),const SizedBox(),const SizedBox(),
-                    const Row(
-                      children: [
-                        SizedBox(width: 20,),
-                        Text('APPLICATIONS ARE OPENED NOW ',style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: "K-ThinItalic",
-                          fontWeight: FontWeight.bold,
-                          fontSize:14,
-                        ),),
-                        SizedBox(width: 30,),
-                        FaIcon(FontAwesomeIcons.arrowRight,color: Colors.white,size: 22,)
-                      ],
-                    ),
-                  ],
-                ),
-
-              ),),
+                ),),
 
             ],
-          )
+          ),duration: Duration(seconds: 2),delay: Duration(
+            seconds: 2
+          ),),
 
 
         ],
