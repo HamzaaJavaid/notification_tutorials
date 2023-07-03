@@ -1,6 +1,7 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:notification_app/screens/MainDashBoard/Dashboard.dart';
+import 'package:flutter/animation.dart';
 
 class NotificationDashboard extends StatefulWidget {
   const NotificationDashboard({super.key});
@@ -23,15 +24,15 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   SizedBox(width: MediaQuery.of(context).size.width/20,),
-                  Text('GOOD EVENING',style: TextStyle(
+                  const Text('GOOD EVENING',style: TextStyle(
                       fontSize: 26,fontWeight: FontWeight.bold,
                       fontFamily: "Bold"
                   ),),
-                  SizedBox(),SizedBox(),SizedBox(),SizedBox(),
-                  SizedBox(),SizedBox(),SizedBox(),SizedBox(),
-                  SizedBox(),SizedBox(),SizedBox(),SizedBox(),
-                  SizedBox(),SizedBox(),SizedBox(),SizedBox(),
-                  CircleAvatar(
+                  const SizedBox(),const SizedBox(),const SizedBox(),const SizedBox(),
+                  const SizedBox(),const SizedBox(),const SizedBox(),const SizedBox(),
+                  const SizedBox(),const SizedBox(),const SizedBox(),const SizedBox(),
+                  const SizedBox(),const SizedBox(),const SizedBox(),const SizedBox(),
+                  const CircleAvatar(
                     radius: 26,
                     backgroundImage: AssetImage('assets/images/profilcPic.png'),
                   )
@@ -40,13 +41,13 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
               Row(
                 children: [
                   SizedBox(width: MediaQuery.of(context).size.width/10,),
-                  Text('Hamza Javaid',style: TextStyle(
+                  const Text('Hamza Javaid',style: TextStyle(
                     fontFamily: "Regular",
                       fontSize:20,
                       color: Colors.deepPurpleAccent
                   ),),
-                  SizedBox(width: 30,),
-                  FaIcon(FontAwesomeIcons.crown,color: Colors.orange,)
+                  const SizedBox(width: 30,),
+                  const FaIcon(FontAwesomeIcons.crown,color: Colors.orange,)
                 ],
               ),
               SizedBox(height: MediaQuery.of(context).size.height/20,),
@@ -57,7 +58,7 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
                   height: MediaQuery.of(context).size.height/5,
                   decoration: BoxDecoration(
                     //color: Colors.orange,
-                      borderRadius:BorderRadius.all(Radius.circular(20)),
+                      borderRadius:const BorderRadius.all(Radius.circular(20)),
                       gradient: LinearGradient(
                         colors:[
                           Colors.orange.withOpacity(0.5),
@@ -66,7 +67,7 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
                         begin: Alignment.topRight,
                         end: Alignment.bottomLeft,
                       ),
-                      image: DecorationImage(
+                      image: const DecorationImage(
 
                           alignment: Alignment.centerRight,
                           image: AssetImage('assets/images/learning.png')
@@ -80,7 +81,7 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
                       Row(
                         children: [
                           SizedBox(width: MediaQuery.of(context).size.width/30,),
-                          Text('Enroll Now ',style: TextStyle(
+                          const Text('Enroll Now ',style: TextStyle(
                               color: Colors.deepPurpleAccent,
                               fontFamily: "Bold",
                               fontWeight: FontWeight.bold,
@@ -91,15 +92,15 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
                       ),
                       SizedBox(height: MediaQuery.of(context).size.height/50,),
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 25),
+                        padding: const EdgeInsets.symmetric(horizontal: 25),
                         child:Container(
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                                 color: Colors.greenAccent,
                                 borderRadius: BorderRadius.all(Radius.circular(10))
                             ),
                             width: MediaQuery.of(context).size.height/6.6,
                             height: MediaQuery.of(context).size.height/20,
-                            child: Row(
+                            child: const Row(
                               children: [
                                 SizedBox(width: 10,),
                                 Center(
@@ -122,7 +123,7 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
 
               ),
               SizedBox(height: MediaQuery.of(context).size.height/20,),
-              Container(
+              SizedBox(
                 height: MediaQuery.of(context).size.height/7,
                 width: MediaQuery.of(context).size.width,
                // color: Colors.yellow,
@@ -136,7 +137,7 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
                       width: MediaQuery.of(context).size.width/2,
                       decoration: BoxDecoration(
 
-                          borderRadius:BorderRadius.all(Radius.circular(20)),
+                          borderRadius:const BorderRadius.all(Radius.circular(20)),
                           gradient: LinearGradient(
                             colors:[
                               Colors.cyan.withOpacity(0.5),
@@ -145,7 +146,7 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
                             begin: Alignment.topRight,
                             end: Alignment.bottomLeft,
                           ),
-                          image: DecorationImage(
+                          image: const DecorationImage(
 
                               scale: 5,
                               opacity: 0.6,
@@ -157,8 +158,8 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SizedBox(height: 20,),
-                          Padding(
+                          const SizedBox(height: 20,),
+                          const  Padding(
 
                             padding: EdgeInsets.symmetric(horizontal: 10),
                             child: Text('TAKE LESSON',style: TextStyle(
@@ -166,17 +167,17 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
                             ),),
 
                           ),
-                          SizedBox(height: 13,),
+                          const SizedBox(height: 13,),
                           Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 14),
+                            padding:const  EdgeInsets.symmetric(horizontal: 14),
                             child:Container(
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                     color: Colors.blueAccent,
                                     borderRadius: BorderRadius.all(Radius.circular(10))
                                 ),
                                 width: MediaQuery.of(context).size.height/8.6,
                                 height: MediaQuery.of(context).size.height/23,
-                                child: Row(
+                                child: const Row(
                                   children: [
                                     SizedBox(width: 16,),
                                     Center(
@@ -202,7 +203,7 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
                       width: MediaQuery.of(context).size.width/2,
                       decoration: BoxDecoration(
 
-                          borderRadius:BorderRadius.all(Radius.circular(20)),
+                          borderRadius:const BorderRadius.all(Radius.circular(20)),
                           gradient: LinearGradient(
                             colors:[
                               Colors.blue.withOpacity(0.5),
@@ -211,7 +212,7 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
                             begin: Alignment.topRight,
                             end: Alignment.bottomLeft,
                           ),
-                          image: DecorationImage(
+                          image: const DecorationImage(
 
                               scale: 5,
                               opacity: 0.6,
@@ -223,8 +224,8 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SizedBox(height: 20,),
-                          Padding(
+                          const   SizedBox(height: 20,),
+                          const  Padding(
 
                             padding: EdgeInsets.symmetric(horizontal: 10),
                             child: Text('DAILY TEST',style: TextStyle(
@@ -232,17 +233,17 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
                             ),),
 
                           ),
-                          SizedBox(height: 13,),
+                          const SizedBox(height: 13,),
                           Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 14),
+                            padding: const EdgeInsets.symmetric(horizontal: 14),
                             child:Container(
-                                decoration: BoxDecoration(
+                                decoration:const  BoxDecoration(
                                     color: Colors.redAccent,
                                     borderRadius: BorderRadius.all(Radius.circular(10))
                                 ),
                                 width: MediaQuery.of(context).size.height/8.6,
                                 height: MediaQuery.of(context).size.height/23,
-                                child: Row(
+                                child:const Row(
                                   children: [
                                     SizedBox(width: 16,),
                                     Center(
@@ -266,7 +267,7 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
                       width: MediaQuery.of(context).size.width/2,
                       decoration: BoxDecoration(
 
-                          borderRadius:BorderRadius.all(Radius.circular(20)),
+                          borderRadius:const BorderRadius.all(Radius.circular(20)),
                           gradient: LinearGradient(
                             colors:[
                               Colors.yellow.withOpacity(0.8),
@@ -275,7 +276,7 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
                             begin: Alignment.topRight,
                             end: Alignment.bottomLeft,
                           ),
-                          image: DecorationImage(
+                          image: const DecorationImage(
 
                               scale: 5,
                               opacity: 0.6,
@@ -287,8 +288,8 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SizedBox(height: 20,),
-                          Padding(
+                          const  SizedBox(height: 20,),
+                          const   Padding(
 
                             padding: EdgeInsets.symmetric(horizontal: 10),
                             child: Text('PROGRESS',style: TextStyle(
@@ -296,17 +297,17 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
                             ),),
 
                           ),
-                          SizedBox(height: 13,),
+                          const  SizedBox(height: 13,),
                           Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 14),
+                            padding:const  EdgeInsets.symmetric(horizontal: 14),
                             child:Container(
                                 decoration: BoxDecoration(
                                     color: Colors.purpleAccent.withOpacity(0.8),
-                                    borderRadius: BorderRadius.all(Radius.circular(10))
+                                    borderRadius: const BorderRadius.all(Radius.circular(10))
                                 ),
                                 width: MediaQuery.of(context).size.height/9.6,
                                 height: MediaQuery.of(context).size.height/23,
-                                child: Row(
+                                child: const Row(
                                   children: [
                                     SizedBox(width: 13,),
                                     Center(
@@ -345,7 +346,7 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
                   height: MediaQuery.of(context).size.height/8,
                   decoration: BoxDecoration(
                     //color: Colors.orange,
-                      borderRadius:BorderRadius.only(
+                      borderRadius:const BorderRadius.only(
                         topRight: Radius.circular(30),
                         bottomLeft: Radius.circular(30),
                       ),
@@ -363,7 +364,7 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Padding(
+                      const  Padding(
                         padding: EdgeInsets.symmetric(horizontal: 20),
                         child: CircleAvatar(
                           backgroundImage: AssetImage('assets/images/localnotification.png'),
@@ -373,22 +374,22 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
                       ),
                       Column(
                         children: [
-                          SizedBox(height: 10,),
-                          Text("LOCAL NOTIFICATIONS",style: TextStyle(
+                          const   SizedBox(height: 10,),
+                          const   Text("LOCAL NOTIFICATIONS",style: TextStyle(
                             color: Colors.white,fontSize: 20,
                             fontFamily: "Bold"
                           ),),
-                          SizedBox(height: 10,),
+                          const SizedBox(height: 10,),
                           Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 14),
+                            padding: const EdgeInsets.symmetric(horizontal: 14),
                             child:Container(
                                 decoration: BoxDecoration(
                                     color: Colors.yellow.withOpacity(0.4),
-                                    borderRadius: BorderRadius.all(Radius.circular(10))
+                                    borderRadius:const  BorderRadius.all(Radius.circular(10))
                                 ),
                                 width: MediaQuery.of(context).size.height/4,
                                 height: MediaQuery.of(context).size.height/23,
-                                child: Row(
+                                child:const  Row(
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -421,7 +422,7 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
                   height: MediaQuery.of(context).size.height/8,
                   decoration: BoxDecoration(
                     //color: Colors.orange,
-                    borderRadius:BorderRadius.only(
+                    borderRadius:const BorderRadius.only(
                       topRight: Radius.circular(30),
                       bottomLeft: Radius.circular(30),
                     ),
@@ -439,7 +440,7 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Padding(
+                      const   Padding(
                         padding: EdgeInsets.symmetric(horizontal: 20),
                         child: CircleAvatar(
                           backgroundImage: AssetImage('assets/images/cloudnotification.png'),
@@ -449,22 +450,22 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
                       ),
                       Column(
                         children: [
-                          SizedBox(height: 10,),
-                          Text("CLOUD NOTIFICATIONS",style: TextStyle(
+                          const  SizedBox(height: 10,),
+                          const  Text("CLOUD NOTIFICATIONS",style: TextStyle(
                               color: Colors.white,fontSize: 20,
                               fontFamily: "Bold"
                           ),),
-                          SizedBox(height: 10,),
+                          const  SizedBox(height: 10,),
                           Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 14),
+                            padding: const EdgeInsets.symmetric(horizontal: 14),
                             child:Container(
-                                decoration: BoxDecoration(
+                                decoration:const  BoxDecoration(
                                     color: Colors.greenAccent,
                                     borderRadius: BorderRadius.all(Radius.circular(10))
                                 ),
                                 width: MediaQuery.of(context).size.height/4,
                                 height: MediaQuery.of(context).size.height/23,
-                                child: Row(
+                                child: const Row(
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -490,6 +491,7 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
 
               ),
               SizedBox(height: MediaQuery.of(context).size.height/30,),
+
 
 
 
@@ -520,14 +522,14 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
               onTap: (){
                 Navigator.pop(context);
               },
-              child: FaIcon(FontAwesomeIcons.home,color: Colors.white,size: 20,),
+              child: const FaIcon(FontAwesomeIcons.house,color: Colors.white,size: 20,),
             ),
-            FaIcon(FontAwesomeIcons.bell,color: Colors.white,size: 20,),
-            CircleAvatar(radius: 26,
-              backgroundColor: Colors.white,child: FaIcon(FontAwesomeIcons.add,color: Colors.orangeAccent,size: 20,),
+            const  FaIcon(FontAwesomeIcons.bell,color: Colors.white,size: 20,),
+            const  CircleAvatar(radius: 26,
+              backgroundColor: Colors.white,child: FaIcon(FontAwesomeIcons.plus,color: Colors.orangeAccent,size: 20,),
             ),
-            FaIcon(FontAwesomeIcons.sun,color: Colors.white,size: 20,),
-            Icon(Icons.person,color: Colors.white,)
+            const  FaIcon(FontAwesomeIcons.sun,color: Colors.white,size: 20,),
+            const  Icon(Icons.person,color: Colors.white,)
           ],
         ),
       ),
