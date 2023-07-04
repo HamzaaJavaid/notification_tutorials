@@ -11,7 +11,7 @@ class MainDashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         bottomNavigationBar: Container(
-          //color: Colors.deepOrangeAccent.withOpacity(0.4),
+          
           height: 60,
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -41,7 +41,7 @@ class MainDashboard extends StatelessWidget {
         ),
       body: Stack(
         children: [
-          //1st Column Items
+          
           FadeInUp(child: Column(
             children: [
               SizedBox(height: MediaQuery.of(context).size.height/10,),
@@ -91,7 +91,7 @@ class MainDashboard extends StatelessWidget {
                                 child: CircleAvatar(
                                   radius: 30,
                                   backgroundColor: Colors.transparent,
-                                  // backgroundImage: AssetImage('assets/images/profilcPic.png',),
+                                  
                                 ),
                               )
                             ],
@@ -101,7 +101,7 @@ class MainDashboard extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Text("WELCOME \nBACK", style: TextStyle(
-                                //fontFamily: "K-Bold",
+                                
                                 color: Colors.white,fontWeight: FontWeight.bold,
                                 fontSize: 20,
                               ),),
