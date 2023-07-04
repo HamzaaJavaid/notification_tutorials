@@ -9,7 +9,6 @@ import 'package:notification_app/screens/Notifications/notification%20dashboard.
 import 'package:provider/provider.dart';
 
 void main(){
-
   runApp(
    const MyApp()
      );
@@ -111,11 +110,9 @@ class _IntroScreensState extends State<IntroScreens> {
   }
 
   void onDonePress() {
-   // log("End of slides");
+  
     Navigator.push(context, MaterialPageRoute(builder: (context)=>const SignIn()));
   }
-
-
   @override
   Widget build(BuildContext context) {
     return IntroSlider(
