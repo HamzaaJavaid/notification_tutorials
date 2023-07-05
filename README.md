@@ -1,6 +1,6 @@
-Notification App 📌  
+# Notification App 📌  
 
--Tools Involved:-  
+## Tools Involved:-  
 
  📌 Android Studio  
  📌 Dart  
@@ -10,13 +10,13 @@ Notification App 📌
  📌 Local Notification  
  📌 Cloud Notification  
   
--Platform:-  
+## Platform:-  
   
  🌟Android  
  🌟iOS  
  🌟Window  
  🌟Linux  
   
-Developed By:-  
+## Developed By:-  
  👨‍💻 Hamza Javaid     
    ( Flutter Dev @BingTech | Lead@CPC | Speaker )     
