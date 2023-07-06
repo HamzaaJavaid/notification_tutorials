@@ -19,24 +19,29 @@ class _LocalNotificationScreenState extends State<LocalNotificationScreen> {
           Stack(
             alignment: Alignment.center,
             children: [
-              Container(
+              Padding(padding: EdgeInsets.all(20),child: Container(
                 width: Screen_width,
                 height: Screen_height/1.6,
                 decoration: BoxDecoration(
                     color: Colors.black,
                     image: DecorationImage(
-                      fit: BoxFit.fitHeight,
-                      opacity: 0.7,
+                        fit: BoxFit.fitHeight,
+                        opacity: 0.7,
                         image: AssetImage('assets/images/localnotificationpic.png')
-                    )
+                    ),
+                    borderRadius: BorderRadius.all(Radius.circular(20))
                 ),
-              ),
-              Container(
-                width: Screen_width,
-                height: Screen_height/1.6,
-                decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.5),
-                    
+              ),),
+              Padding(
+                padding: const EdgeInsets.all(20),
+                child: Container(
+                  width: Screen_width,
+                  height: Screen_height/1.6,
+                  decoration: BoxDecoration(
+                      color: Colors.black.withOpacity(0.5),
+                    borderRadius: BorderRadius.all(Radius.circular(20))
+
+                  ),
                 ),
               ),
               Column(
@@ -60,7 +65,7 @@ class _LocalNotificationScreenState extends State<LocalNotificationScreen> {
               ),
             ],
           ),
-          SizedBox(height: Screen_height/50,),
+          SizedBox(height: Screen_height/150,),
           Row(
             children: [
               SizedBox(width: 10,),
@@ -89,7 +94,7 @@ class _LocalNotificationScreenState extends State<LocalNotificationScreen> {
                      children: [
                         Text("Simple Notification",style: TextStyle(
                          color: Colors.deepPurpleAccent.withOpacity(0.6),
-                         fontSize: 24,
+                         fontSize: 10,
                          fontFamily: "Bold",
                        ),),
                        MaterialButton(
@@ -174,7 +179,7 @@ class _LocalNotificationScreenState extends State<LocalNotificationScreen> {
 
             ],
           ),
-          SizedBox(height: 20,),
+          SizedBox(height: 10,),
           Row(
             children: [
               SizedBox(width: 10,),
@@ -288,7 +293,7 @@ class _LocalNotificationScreenState extends State<LocalNotificationScreen> {
 
             ],
           ),
-          SizedBox(height: 15,),
+          SizedBox(height: 10,),
           Expanded(child: Container(
             decoration: BoxDecoration(
                 color: Colors.green,
