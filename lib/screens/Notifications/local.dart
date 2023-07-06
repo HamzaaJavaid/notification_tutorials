@@ -13,6 +13,7 @@ class _LocalNotificationScreenState extends State<LocalNotificationScreen> {
     var Screen_height = MediaQuery.of(context).size.height;
     var Screen_width = MediaQuery.of(context).size.width;
     return Scaffold(
+      
       body: Column(
         children: [
           Stack(
@@ -93,20 +94,21 @@ class _LocalNotificationScreenState extends State<LocalNotificationScreen> {
                        ),),
                        MaterialButton(
                            onPressed: (){},
-                         child: Text("Test Now",style: TextStyle(
-                           color: Colors.white,
-                           fontSize: 20,
-                           fontFamily: "K-Thin"
-                         ),),
+                           child: Text("Test Now",style: TextStyle(
+                               color: Colors.white,
+                               fontSize: 20,
+                               fontWeight: FontWeight.bold,
+                               fontFamily: "K-Thin"
+                           ),),
                            color: Colors.greenAccent.withOpacity(0.7),
                            height: Screen_height/20,
                            minWidth: Screen_width/3,
-                         shape: OutlineInputBorder(
-                           borderRadius: BorderRadius.all(Radius.circular(20)),
-                           borderSide: BorderSide(
-                             color: Colors.transparent
+                           shape: OutlineInputBorder(
+                               borderRadius: BorderRadius.all(Radius.circular(20)),
+                               borderSide: BorderSide(
+                                   color: Colors.transparent
+                               )
                            )
-                         )
 
                        ),
                      ],
@@ -149,6 +151,7 @@ class _LocalNotificationScreenState extends State<LocalNotificationScreen> {
                             child: Text("Test Now",style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,
+                                fontWeight: FontWeight.bold,
                                 fontFamily: "K-Thin"
                             ),),
                             color: Colors.greenAccent.withOpacity(0.7),
@@ -208,6 +211,7 @@ class _LocalNotificationScreenState extends State<LocalNotificationScreen> {
                             child: Text("Test Now",style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,
+                                fontWeight: FontWeight.bold,
                                 fontFamily: "K-Thin"
                             ),),
                             color: Colors.greenAccent.withOpacity(0.7),
@@ -261,6 +265,7 @@ class _LocalNotificationScreenState extends State<LocalNotificationScreen> {
                             child: Text("Test Now",style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,
+                                fontWeight: FontWeight.bold,
                                 fontFamily: "K-Thin"
                             ),),
                             color: Colors.greenAccent.withOpacity(0.7),
@@ -317,6 +322,7 @@ class _LocalNotificationScreenState extends State<LocalNotificationScreen> {
                         child: Text("Test Now",style: TextStyle(
                             color: Colors.white,
                             fontSize: 20,
+                            fontWeight: FontWeight.bold,
                             fontFamily: "K-Thin"
                         ),),
                         color: Colors.greenAccent.withOpacity(0.7),
