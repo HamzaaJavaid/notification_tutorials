@@ -7,8 +7,8 @@
  📌 Flutter   
  📌 Developer Packages  
  📌 Animation  
- 📌 Local Notification  
- 📌 Cloud Notification  
+ 📌 Local Notification Developer Packages 
+ 📌 Cloud Notification By Google 
   
 ## Platform:-  
   
