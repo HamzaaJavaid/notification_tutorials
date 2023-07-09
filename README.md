@@ -1,6 +1,6 @@
 # Notification App 📌  
 
-## Tools Involved:-  
+## Tools Involved :- 📝  
 
  💫 Android Studio  
  💫 Dart  
@@ -10,7 +10,7 @@
  💫 Local Notification Developer Packages   
  💫 Cloud Notification By Google 
   
-## Platform:-  
+## Platform:- 📱    
   
  🌟Android  
  🌟iOS  
