@@ -17,6 +17,6 @@
  🌟Window  
  🌟Linux  
   
-## Developed By:-  
+## Developed By:-  👨‍💻    
  👨‍💻 Hamza Javaid     
    ( Flutter Dev @BingTech | Lead@CPC | Speaker )     
