@@ -2,13 +2,13 @@
 
 ## Tools Involved:-  
 
- 📌 Android Studio  
- 📌 Dart  
- 📌 Flutter   
- 📌 Developer Packages  
- 📌 Animation  
- 📌 Local Notification Developer Packages   
- 📌 Cloud Notification By Google 
+ 💫 Android Studio  
+ 💫 Dart  
+ 💫 Flutter   
+ 💫 Developer Packages  
+ 💫 Animation  
+ 💫 Local Notification Developer Packages   
+ 💫 Cloud Notification By Google 
   
 ## Platform:-  
   
