@@ -184,11 +184,11 @@ class _LocalNotificationScreenState extends State<LocalNotificationScreen> {
             const SizedBox(height: 4,),
             Row(
               children: [
-                SizedBox(width: 10,),
+                const SizedBox(width: 10,),
                 Expanded(child: Container(
                   decoration: BoxDecoration(
                       color: Colors.green,
-                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                      borderRadius: const BorderRadius.all(Radius.circular(20)),
                       gradient: LinearGradient(
                         colors: [
                           Colors.greenAccent.withOpacity(0.4),
@@ -215,21 +215,21 @@ class _LocalNotificationScreenState extends State<LocalNotificationScreen> {
                           ),),
                           MaterialButton(
                               onPressed: (){},
-                              child: Text("Test Now",style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: "K-Thin"
-                              ),),
                               color: Colors.greenAccent.withOpacity(0.7),
                               height: screenHeight/30,
                               minWidth: screenWidth/3,
-                              shape: OutlineInputBorder(
+                              shape: const OutlineInputBorder(
                                   borderRadius: BorderRadius.all(Radius.circular(20)),
                                   borderSide: BorderSide(
                                       color: Colors.transparent
                                   )
-                              )
+                              ),
+                              child: const Text("Test Now",style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: "K-Thin"
+                              ),)
 
                           ),
                         ],
@@ -238,11 +238,11 @@ class _LocalNotificationScreenState extends State<LocalNotificationScreen> {
                   ),
                 ),),
 
-                SizedBox(width: 10,),
+                const SizedBox(width: 10,),
                 Expanded(child: Container(
                   decoration: BoxDecoration(
                       color: Colors.green,
-                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                      borderRadius: const BorderRadius.all(Radius.circular(20)),
                       gradient: LinearGradient(
                         colors: [
                           Colors.greenAccent.withOpacity(0.4),
@@ -269,21 +269,21 @@ class _LocalNotificationScreenState extends State<LocalNotificationScreen> {
                           ),),
                           MaterialButton(
                               onPressed: (){},
-                              child: Text("Test Now",style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: "K-Thin"
-                              ),),
                               color: Colors.greenAccent.withOpacity(0.7),
                               height: screenHeight/30,
                               minWidth: screenWidth/3,
-                              shape: OutlineInputBorder(
+                              shape: const OutlineInputBorder(
                                   borderRadius: BorderRadius.all(Radius.circular(20)),
                                   borderSide: BorderSide(
                                       color: Colors.transparent
                                   )
-                              )
+                              ),
+                              child: const Text("Test Now",style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: "K-Thin"
+                              ),)
 
                           ),
                         ],
@@ -291,7 +291,7 @@ class _LocalNotificationScreenState extends State<LocalNotificationScreen> {
                     ],
                   ),
                 ),),
-                SizedBox(width: 10,),
+                const SizedBox(width: 10,),
 
               ],
             ),
@@ -299,7 +299,7 @@ class _LocalNotificationScreenState extends State<LocalNotificationScreen> {
             Container(
               decoration: BoxDecoration(
                   color: Colors.green,
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  borderRadius: const BorderRadius.all(Radius.circular(20)),
                   gradient: LinearGradient(
                     colors: [
                       Colors.greenAccent.withOpacity(0.4),
@@ -326,21 +326,21 @@ class _LocalNotificationScreenState extends State<LocalNotificationScreen> {
                       ),),
                       MaterialButton(
                           onPressed: (){},
-                          child: Text("Test Now",style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: "K-Thin"
-                          ),),
                           color: Colors.greenAccent.withOpacity(0.7),
                           height: screenHeight/30,
                           minWidth: screenWidth/3,
-                          shape: OutlineInputBorder(
+                          shape: const OutlineInputBorder(
                               borderRadius: BorderRadius.all(Radius.circular(20)),
                               borderSide: BorderSide(
                                   color: Colors.transparent
                               )
-                          )
+                          ),
+                          child: const Text("Test Now",style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: "K-Thin"
+                          ),)
 
                       ),
                     ],
