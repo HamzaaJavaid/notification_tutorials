@@ -16,7 +16,12 @@ class LocalNotification {
       android: androidInitializationSettings
     );
 
-    flutterLocalNotificationsPlugin.initialize(initializationSettings);
+    flutterLocalNotificationsPlugin.initialize(
+        initializationSettings,
+      onDidReceiveNotificationResponse: (response){
+          print(response.payload.toString());
+      }
+    );
 
   }
 
@@ -166,6 +171,32 @@ class LocalNotification {
     );
     
     
+   }
+
+   void showPayloadNotification(String title , String body){
+
+
+    AndroidNotificationDetails androidNotificationDetails = AndroidNotificationDetails(
+        DateTime.now().millisecondsSinceEpoch.remainder(8).toString(),
+        "Payloads Notification",
+      channelShowBadge: true,
+      channelDescription: "Notification Payloads Channels",
+      importance: Importance.max,
+      priority: Priority.max,
+      largeIcon: DrawableResourceAndroidBitmap("appicon")
+    );
+
+    NotificationDetails notificationDetails = NotificationDetails(
+      android: androidNotificationDetails
+    );
+
+    flutterLocalNotificationsPlugin.show(
+        DateTime.now().millisecondsSinceEpoch.remainder(20),
+        title,
+        body,
+        notificationDetails,
+      payload: "Payload On local Notificaton Screen"
+    );
    }
    
 

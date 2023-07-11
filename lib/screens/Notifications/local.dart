@@ -352,7 +352,10 @@ class _LocalNotificationScreenState extends State<LocalNotificationScreen> {
                         fontFamily: "Bold",
                       ),),
                       MaterialButton(
-                          onPressed: (){},
+                          onPressed: (){
+                            localnotif.showPayloadNotification("Payload Notification", "Payload Notification By Hamza Javaid");
+
+                          },
                           color: Colors.greenAccent.withOpacity(0.7),
                           height: screenHeight/30,
                           minWidth: screenWidth/3,
