@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notification_app/Notification%20Services/local.dart';
 
 class LocalNotificationScreen extends StatefulWidget {
   const LocalNotificationScreen({super.key});
@@ -8,6 +9,17 @@ class LocalNotificationScreen extends StatefulWidget {
 }
 
 class _LocalNotificationScreenState extends State<LocalNotificationScreen> {
+
+  LocalNotification localnotif = LocalNotification();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    localnotif.initializeNotifications();
+
+  }
+
   @override
   Widget build(BuildContext context) {
     var screenHeight = MediaQuery.of(context).size.height;
@@ -100,7 +112,13 @@ class _LocalNotificationScreenState extends State<LocalNotificationScreen> {
                             fontFamily: "Bold",
                           ),),
                           MaterialButton(
-                              onPressed: (){},
+                              onPressed: (){
+                                localnotif.showSimpleNotification(
+                                  "Simple Notifications",
+                                  "This Is an Simple Notification Body"
+                                );
+
+                              },
                               color: Colors.greenAccent.withOpacity(0.7),
                               height: screenHeight/30,
                               minWidth: screenWidth/3,
@@ -154,7 +172,12 @@ class _LocalNotificationScreenState extends State<LocalNotificationScreen> {
                             fontFamily: "Bold",
                           ),),
                           MaterialButton(
-                              onPressed: (){},
+                              onPressed: (){
+                                localnotif.showIconNotification(
+                                "Icon Notification",
+                                "This Notication Contain Icon displayed in Notification"
+                                );
+                              },
                               color: Colors.greenAccent.withOpacity(0.7),
                               height: screenHeight/30,
                               minWidth: screenWidth/3,
@@ -214,7 +237,9 @@ class _LocalNotificationScreenState extends State<LocalNotificationScreen> {
                             fontFamily: "Bold",
                           ),),
                           MaterialButton(
-                              onPressed: (){},
+                              onPressed: (){
+                                localnotif.showBigPictureNotification("Big Picture", "This is body of Big Picture Notification");
+                              },
                               color: Colors.greenAccent.withOpacity(0.7),
                               height: screenHeight/30,
                               minWidth: screenWidth/3,
@@ -319,7 +344,7 @@ class _LocalNotificationScreenState extends State<LocalNotificationScreen> {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Zoned Notification",style: TextStyle(
+                      Text("Payload Notification",style: TextStyle(
                         color: Colors.deepPurpleAccent.withOpacity(0.6),
                         fontSize: 19,
                         fontFamily: "Bold",
