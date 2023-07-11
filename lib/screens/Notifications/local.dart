@@ -293,7 +293,9 @@ class _LocalNotificationScreenState extends State<LocalNotificationScreen> {
                             fontFamily: "Bold",
                           ),),
                           MaterialButton(
-                              onPressed: (){},
+                              onPressed: (){
+                                localnotif.showZonedNotification("Zoned Notification", "Zoned Notification recieved by device with small Delay");
+                              },
                               color: Colors.greenAccent.withOpacity(0.7),
                               height: screenHeight/30,
                               minWidth: screenWidth/3,

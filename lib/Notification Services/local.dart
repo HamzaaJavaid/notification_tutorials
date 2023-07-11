@@ -1,6 +1,7 @@
 
 
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:timezone/timezone.dart';
 
 class LocalNotification {
 
@@ -129,6 +130,44 @@ class LocalNotification {
 
 
    }
+   
+   void showZonedNotification(String title , String body){
+
+     /*
+                                                     NOTE:-  DEVELOPERS
+    ***************    Dont Overwrite this Channel .Overwritting will destabalize this Channel*********************
+     */
+
+    AndroidNotificationDetails androidNotificationDetails = AndroidNotificationDetails(
+        DateTime.now().millisecondsSinceEpoch.remainder(8).toString(),
+        "Zoned Notification",
+      channelDescription:"This Channel is made for Zoned Notification",
+      channelShowBadge: true,
+      enableVibration: true,
+      importance: Importance.max ,
+      priority: Priority.max,
+      styleInformation: const BigPictureStyleInformation(
+        DrawableResourceAndroidBitmap('appicon')
+      )
+    );
+
+    NotificationDetails notificationDetails  = NotificationDetails(
+      android: androidNotificationDetails
+    );
+
+
+    flutterLocalNotificationsPlugin.zonedSchedule(
+        DateTime.now().millisecondsSinceEpoch.remainder(20),
+        title,
+        body,
+        TZDateTime.from(DateTime.now().add(const Duration(seconds: 2)), local),
+        notificationDetails, 
+        uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime
+    );
+    
+    
+   }
+   
 
 
 

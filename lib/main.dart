@@ -8,8 +8,11 @@ import 'package:notification_app/screens/MainDashBoard/Dashboard.dart';
 import 'package:notification_app/screens/Notifications/local.dart';
 import 'package:notification_app/screens/Notifications/notification%20dashboard.dart';
 import 'package:provider/provider.dart';
+import 'package:timezone/data/latest_10y.dart' ;
+import 'dart:async';
 
 void main(){
+  initializeTimeZones();
   runApp(
    const MyApp()
      );
