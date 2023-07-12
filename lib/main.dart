@@ -3,13 +3,10 @@ import 'package:intro_slider/intro_slider.dart';
 import 'package:notification_app/State Managment//Login%20Provider.dart';
 import 'package:notification_app/State%20Managment/Account%20Create%20Provider.dart';
 import 'package:notification_app/screens/Auth%20Screens/login.dart';
-import 'package:notification_app/screens/Auth%20Screens/signUp%20Screen.dart';
-import 'package:notification_app/screens/MainDashBoard/Dashboard.dart';
 import 'package:notification_app/screens/Notifications/local.dart';
-import 'package:notification_app/screens/Notifications/notification%20dashboard.dart';
 import 'package:provider/provider.dart';
 import 'package:timezone/data/latest_10y.dart' ;
-import 'dart:async';
+
 
 void main(){
   initializeTimeZones();

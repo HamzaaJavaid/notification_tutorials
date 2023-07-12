@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:notification_app/Notification%20Services/local.dart';
 
 class LocalNotificationScreen extends StatefulWidget {
@@ -12,13 +13,26 @@ class _LocalNotificationScreenState extends State<LocalNotificationScreen> {
 
   LocalNotification localnotif = LocalNotification();
 
+  void checkNotificationStart()async{
+    NotificationAppLaunchDetails? notificationAppLaunchDetails = await localnotif.flutterLocalNotificationsPlugin.getNotificationAppLaunchDetails();
+    if(notificationAppLaunchDetails?.didNotificationLaunchApp!=null){
+      NotificationResponse? notificationResponse = notificationAppLaunchDetails?.notificationResponse;
+      if(notificationResponse!=null){
+
+      }
+    }
+  }
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     localnotif.initializeNotifications();
+    checkNotificationStart();
 
   }
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -323,60 +337,122 @@ class _LocalNotificationScreenState extends State<LocalNotificationScreen> {
               ],
             ),
             const SizedBox(height: 4,),
-            Container(
-              decoration: BoxDecoration(
-                  color: Colors.green,
-                  borderRadius: const BorderRadius.all(Radius.circular(20)),
-                  gradient: LinearGradient(
-                    colors: [
-                      Colors.greenAccent.withOpacity(0.4),
-                      Colors.orangeAccent.withOpacity(0.4),
-                    ],
-                    begin: Alignment.topRight,
-                    end: Alignment.bottomLeft,
-                  )
+            Row(
+              children: [
+                const SizedBox(width: 10,),
+                Expanded(child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.green,
+                      borderRadius: const BorderRadius.all(Radius.circular(20)),
+                      gradient: LinearGradient(
+                        colors: [
+                          Colors.greenAccent.withOpacity(0.4),
+                          Colors.orangeAccent.withOpacity(0.4),
+                        ],
+                        begin: Alignment.topRight,
+                        end: Alignment.bottomLeft,
+                      )
 
-              ),
-              width: screenWidth/2,
-              height: screenHeight/9,
+                  ),
+                  width: screenWidth/2,
+                  height: screenHeight/10,
 
-              child: Stack(
-                alignment: AlignmentDirectional.center,
-                children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                  child: Stack(
+                    alignment: AlignmentDirectional.center,
                     children: [
-                      Text("Payload Notification",style: TextStyle(
-                        color: Colors.deepPurpleAccent.withOpacity(0.6),
-                        fontSize: 19,
-                        fontFamily: "Bold",
-                      ),),
-                      MaterialButton(
-                          onPressed: (){
-                            localnotif.showPayloadNotification("Payload Notification", "Payload Notification By Hamza Javaid");
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text("Payload Notification",style: TextStyle(
+                            color: Colors.deepPurpleAccent.withOpacity(0.6),
+                            fontSize: 19,
+                            fontFamily: "Bold",
+                          ),),
+                          MaterialButton(
+                              onPressed: (){
+                                localnotif.showPayloadNotification("Payload Notification", "Payloads by Hamza Javaid");
+                              },
+                              color: Colors.greenAccent.withOpacity(0.7),
+                              height: screenHeight/30,
+                              minWidth: screenWidth/3,
+                              shape: const OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                                  borderSide: BorderSide(
+                                      color: Colors.transparent
+                                  )
+                              ),
+                              child: const Text("Test Now",style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: "K-Thin"
+                              ),)
 
-                          },
-                          color: Colors.greenAccent.withOpacity(0.7),
-                          height: screenHeight/30,
-                          minWidth: screenWidth/3,
-                          shape: const OutlineInputBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(20)),
-                              borderSide: BorderSide(
-                                  color: Colors.transparent
-                              )
                           ),
-                          child: const Text("Test Now",style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: "K-Thin"
-                          ),)
-
-                      ),
+                        ],
+                      )
                     ],
-                  )
-                ],
-              ),
+                  ),
+                ),),
+
+                const SizedBox(width: 10,),
+                Expanded(child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.green,
+                      borderRadius: const BorderRadius.all(Radius.circular(20)),
+                      gradient: LinearGradient(
+                        colors: [
+                          Colors.greenAccent.withOpacity(0.4),
+                          Colors.orangeAccent.withOpacity(0.4),
+                        ],
+                        begin: Alignment.topRight,
+                        end: Alignment.bottomLeft,
+                      )
+
+                  ),
+                  width: screenWidth/2,
+                  height: screenHeight/10,
+
+                  child: Stack(
+                    alignment: AlignmentDirectional.center,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text("Navigate Notification",style: TextStyle(
+                            color: Colors.deepPurpleAccent.withOpacity(0.6),
+                            fontSize: 18,
+                            fontFamily: "Bold",
+                          ),),
+                          MaterialButton(
+                              onPressed: (){
+                                localnotif.navigateScreenOnNotificationClick("Navigation", "Navigation Mechenism By Hamza Javaid");
+                              },
+                              color: Colors.greenAccent.withOpacity(0.7),
+                              height: screenHeight/30,
+                              minWidth: screenWidth/3,
+                              shape: const OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                                  borderSide: BorderSide(
+                                      color: Colors.transparent
+                                  )
+                              ),
+                              child: const Text("Test Now",style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: "K-Thin"
+                              ),)
+
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                ),),
+                const SizedBox(width: 10,),
+
+              ],
             ),
             SizedBox(height: screenHeight/40,),
             const Text('Notif Channel # 54312',textAlign: TextAlign.center,style: TextStyle(color: Colors.grey,fontSize: 9),)

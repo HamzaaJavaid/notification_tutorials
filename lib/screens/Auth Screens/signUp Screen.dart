@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:notification_app/State%20Managment/Account%20Create%20Provider.dart';
-import 'package:notification_app/State%20Managment/Login%20Provider.dart';
 import 'package:notification_app/screens/Auth%20Screens/login.dart';
 import 'package:provider/provider.dart';
 

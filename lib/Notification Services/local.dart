@@ -19,7 +19,19 @@ class LocalNotification {
     flutterLocalNotificationsPlugin.initialize(
         initializationSettings,
       onDidReceiveNotificationResponse: (response){
-          print(response.payload.toString());
+
+          if(response.payload.toString()=="This is Payload"){
+            print('Payload is unloaded on Device');
+          }
+          else if (response.payload.toString() == "This is Navigation "){
+            print("Navigate to screen succesfully");
+
+          }
+          else{
+            print('Error 404');
+          }
+
+
       }
     );
 
@@ -175,6 +187,11 @@ class LocalNotification {
 
    void showPayloadNotification(String title , String body){
 
+     /*
+                                                     NOTE:-  DEVELOPERS
+    ***************    Dont Overwrite this Channel .Overwritting will destabalize this Channel*********************
+     */
+
 
     AndroidNotificationDetails androidNotificationDetails = AndroidNotificationDetails(
         DateTime.now().millisecondsSinceEpoch.remainder(8).toString(),
@@ -183,7 +200,7 @@ class LocalNotification {
       channelDescription: "Notification Payloads Channels",
       importance: Importance.max,
       priority: Priority.max,
-      largeIcon: DrawableResourceAndroidBitmap("appicon")
+      largeIcon: const DrawableResourceAndroidBitmap("appicon")
     );
 
     NotificationDetails notificationDetails = NotificationDetails(
@@ -195,8 +212,40 @@ class LocalNotification {
         title,
         body,
         notificationDetails,
-      payload: "Payload On local Notificaton Screen"
+      payload: "This is Payload"
     );
+   }
+
+   void navigateScreenOnNotificationClick(String title , String body){
+
+     /*
+                                                     NOTE:-  DEVELOPERS
+    ***************    Dont Overwrite this Channel .Overwritting will destabalize this Channel*********************
+     */
+
+     AndroidNotificationDetails androidNotificationDetails = AndroidNotificationDetails(
+        DateTime.now().millisecondsSinceEpoch.remainder(8).toString(),
+        "Navigation",
+      channelDescription: "Navigation Method Channel",
+      channelShowBadge: true,
+      enableVibration: true ,
+      priority: Priority.max,
+      importance: Importance.max,
+    );
+
+    NotificationDetails notificationDetails = NotificationDetails(
+      android: androidNotificationDetails
+    );
+
+    flutterLocalNotificationsPlugin.show(
+        DateTime.now().millisecondsSinceEpoch.remainder(20),
+        title,
+        body,
+        notificationDetails,
+      payload: "This is Navigation "
+    );
+
+
    }
    
 

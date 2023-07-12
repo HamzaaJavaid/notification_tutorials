@@ -1,7 +1,6 @@
-import 'package:animate_do/animate_do.dart';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:flutter/animation.dart';
 
 class NotificationDashboard extends StatefulWidget {
   const NotificationDashboard({super.key});

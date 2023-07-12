@@ -2,7 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:notification_app/screens/Notifications/notification%20dashboard.dart';
-import 'package:animate_do/animate_do.dart';
+
 
 class MainDashboard extends StatelessWidget {
   const MainDashboard({super.key});
@@ -42,7 +42,7 @@ class MainDashboard extends StatelessWidget {
       body: Stack(
         children: [
           
-          FadeInUp(child: Column(
+          FadeInUp(duration: Duration(seconds: 2),child: Column(
             children: [
               SizedBox(height: MediaQuery.of(context).size.height/10,),
               Padding(
@@ -91,7 +91,7 @@ class MainDashboard extends StatelessWidget {
                                 child: CircleAvatar(
                                   radius: 30,
                                   backgroundColor: Colors.transparent,
-                                  
+
                                 ),
                               )
                             ],
@@ -101,7 +101,7 @@ class MainDashboard extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Text("WELCOME \nBACK", style: TextStyle(
-                                
+
                                 color: Colors.white,fontWeight: FontWeight.bold,
                                 fontSize: 20,
                               ),),
@@ -177,9 +177,9 @@ class MainDashboard extends StatelessWidget {
                 ),
               ),
             ],
-          ),duration: Duration(seconds: 2),),
+          ),),
           //2nd Column Items
-         FadeInUp(child:  Row(
+         FadeInUp(duration: const Duration(seconds: 2),child:  Row(
            mainAxisAlignment: MainAxisAlignment.end,
            children: [
              Column(
@@ -316,8 +316,10 @@ class MainDashboard extends StatelessWidget {
                ],
              )
            ],
-         ),duration: Duration(seconds: 2),),
-          FadeInUp(child: Column(
+         ),),
+          FadeInUp(duration: const Duration(seconds: 2),delay: const Duration(
+            seconds: 2
+          ),child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: MediaQuery.of(context).size.height/1.8,),
@@ -399,8 +401,6 @@ class MainDashboard extends StatelessWidget {
                 ),),
 
             ],
-          ),duration: Duration(seconds: 2),delay: Duration(
-            seconds: 2
           ),),
 
 
