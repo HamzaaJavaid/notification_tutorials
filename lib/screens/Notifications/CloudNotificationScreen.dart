@@ -17,6 +17,8 @@ class _CloudNotificationState extends State<CloudNotification> {
     // TODO: implement initState
     super.initState();
     cloudService.requestPermission();
+    cloudService.deviceToken();
+    cloudService.cloudMessageDetails();
   }
 
   @override

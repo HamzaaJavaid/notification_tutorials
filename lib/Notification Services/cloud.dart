@@ -29,6 +29,20 @@ class CloudService{
 
   }
 
+  Future<String?> deviceToken()async{
+    String? device_token = await messaging.getToken();
+    print(device_token.toString());
+  }
+
+  void cloudMessageDetails(){
+    FirebaseMessaging.onMessage.listen((event) {
+      print(event.notification?.title.toString());
+      print(event.notification?.body.toString());
+
+    });
+
+  }
+
 
 
 
