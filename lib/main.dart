@@ -3,12 +3,16 @@ import 'package:intro_slider/intro_slider.dart';
 import 'package:notification_app/State Managment//Login%20Provider.dart';
 import 'package:notification_app/State%20Managment/Account%20Create%20Provider.dart';
 import 'package:notification_app/screens/Auth%20Screens/login.dart';
-import 'package:notification_app/screens/Notifications/local.dart';
+import 'package:notification_app/screens/Notifications/CloudNotificationScreen.dart';
+import 'package:notification_app/screens/Notifications/LocalNotificationScreen.dart';
 import 'package:provider/provider.dart';
 import 'package:timezone/data/latest_10y.dart' ;
+import 'package:firebase_core/firebase_core.dart';
 
+void main()async {
 
-void main(){
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   initializeTimeZones();
   runApp(
    const MyApp()
@@ -34,7 +38,7 @@ class MyApp extends StatelessWidget {
     builder: (context,child){
       return const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home:LocalNotificationScreen(),
+        home:CloudNotification(),
       );
     },
     );
