@@ -13,15 +13,16 @@ class CloudNotification extends StatefulWidget {
 
 class _CloudNotificationState extends State<CloudNotification> {
 
-  CloudService cloudService = CloudService();
+  CloudNotificationService cloudNotificationService = CloudNotificationService();
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    cloudService.requestPermission();
-    cloudService.initializeCloudNotificationViaLocalNotificationPackage();
-    cloudService.deviceToken();
-
+    cloudNotificationService.requestPermission(context);
+    cloudNotificationService.local_initializeNotification();
+    cloudNotificationService.getDeviceToken();
+    cloudNotificationService.showCloudNotificationDetails();
 
 
   }
@@ -123,8 +124,7 @@ class _CloudNotificationState extends State<CloudNotification> {
                             ),),
                             MaterialButton(
                                 onPressed: (){
-                                  cloudService.cloudSimpleMessagewithDetails();
-
+                                  cloudNotificationService.cloud_showSimpleNotifications();
                                 },
                                 color: Colors.greenAccent.withOpacity(0.7),
                                 height: screenHeight/30,
@@ -180,7 +180,7 @@ class _CloudNotificationState extends State<CloudNotification> {
                             ),),
                             MaterialButton(
                                 onPressed: (){
-                                 cloudService.cloudIconMessagewithDetails();
+                                  cloudNotificationService.cloud_showIconNotifications();
                                 },
                                 color: Colors.greenAccent.withOpacity(0.7),
                                 height: screenHeight/30,

@@ -5,7 +5,6 @@ import 'package:notification_app/State Managment//Login%20Provider.dart';
 import 'package:notification_app/State%20Managment/Account%20Create%20Provider.dart';
 import 'package:notification_app/screens/Auth%20Screens/login.dart';
 import 'package:notification_app/screens/Notifications/CloudNotificationScreen.dart';
-import 'package:notification_app/screens/Notifications/LocalNotificationScreen.dart';
 import 'package:provider/provider.dart';
 import 'package:timezone/data/latest_10y.dart' ;
 import 'package:firebase_core/firebase_core.dart';
@@ -16,19 +15,26 @@ void main()async {
 
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  FirebaseMessaging.onBackgroundMessage(backgroundHandling);
+  FirebaseMessaging.onBackgroundMessage(backgroundNotificationHandler);
   initializeTimeZones();
-  runApp(
-   const MyApp()
-     );
+  runApp(const MyApp());
 }
 
+
+@pragma("vm:entry-point")
+Future<void> backgroundNotificationHandler(RemoteMessage message)async {
+  await Firebase.initializeApp();
+}
+
+/*
 @pragma("vm:entry-point")
 Future<void> backgroundHandling(RemoteMessage message)async{
   await Firebase.initializeApp();
   
 }
 
+
+ */
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
