@@ -1,3 +1,5 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:notification_app/Notification%20Services/cloud.dart';
 
@@ -17,9 +19,14 @@ class _CloudNotificationState extends State<CloudNotification> {
     // TODO: implement initState
     super.initState();
     cloudService.requestPermission();
+    cloudService.initializeCloudNotificationViaLocalNotificationPackage();
     cloudService.deviceToken();
-    cloudService.cloudMessageDetails();
+
+
+
   }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -116,6 +123,7 @@ class _CloudNotificationState extends State<CloudNotification> {
                             ),),
                             MaterialButton(
                                 onPressed: (){
+                                  cloudService.cloudSimpleMessagewithDetails();
 
                                 },
                                 color: Colors.greenAccent.withOpacity(0.7),
@@ -127,7 +135,7 @@ class _CloudNotificationState extends State<CloudNotification> {
                                         color: Colors.transparent
                                     )
                                 ),
-                                child: const Text("Test Now",style: TextStyle(
+                                child: const Text("Enable Now",style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
@@ -171,7 +179,9 @@ class _CloudNotificationState extends State<CloudNotification> {
                               fontFamily: "Bold",
                             ),),
                             MaterialButton(
-                                onPressed: (){},
+                                onPressed: (){
+                                 cloudService.cloudIconMessagewithDetails();
+                                },
                                 color: Colors.greenAccent.withOpacity(0.7),
                                 height: screenHeight/30,
                                 minWidth: screenWidth/3,
@@ -181,7 +191,7 @@ class _CloudNotificationState extends State<CloudNotification> {
                                         color: Colors.transparent
                                     )
                                 ),
-                                child: const Text("Test Now",style: TextStyle(
+                                child: const Text("Enalbe Now",style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
@@ -243,7 +253,7 @@ class _CloudNotificationState extends State<CloudNotification> {
                                         color: Colors.transparent
                                     )
                                 ),
-                                child: const Text("Test Now",style: TextStyle(
+                                child: const Text("Enable Now",style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
@@ -299,7 +309,7 @@ class _CloudNotificationState extends State<CloudNotification> {
                                         color: Colors.transparent
                                     )
                                 ),
-                                child: const Text("Test Now",style: TextStyle(
+                                child: const Text("Enable Now",style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
@@ -361,7 +371,7 @@ class _CloudNotificationState extends State<CloudNotification> {
                                         color: Colors.transparent
                                     )
                                 ),
-                                child: const Text("Test Now",style: TextStyle(
+                                child: const Text("Enable Now",style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
@@ -417,7 +427,7 @@ class _CloudNotificationState extends State<CloudNotification> {
                                         color: Colors.transparent
                                     )
                                 ),
-                                child: const Text("Test Now",style: TextStyle(
+                                child: const Text("Enable Now",style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
@@ -435,7 +445,7 @@ class _CloudNotificationState extends State<CloudNotification> {
                 ],
               ),
               SizedBox(height: screenHeight/40,),
-              const Text('Notif Channel # 54312',textAlign: TextAlign.center,style: TextStyle(color: Colors.grey,fontSize: 9),)
+              const Text('Notif Channel # 3FT56gf',textAlign: TextAlign.center,style: TextStyle(color: Colors.grey,fontSize: 9),)
 
             ],
           ),
