@@ -1,6 +1,7 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import "package:flutter/material.dart";
 import 'package:intro_slider/intro_slider.dart';
+import 'package:notification_app/Notification%20Services/cloud.dart';
 import 'package:notification_app/State Managment//Login%20Provider.dart';
 import 'package:notification_app/State%20Managment/Account%20Create%20Provider.dart';
 import 'package:notification_app/screens/Auth%20Screens/login.dart';
@@ -26,15 +27,9 @@ Future<void> backgroundNotificationHandler(RemoteMessage message)async {
   await Firebase.initializeApp();
 }
 
-/*
-@pragma("vm:entry-point")
-Future<void> backgroundHandling(RemoteMessage message)async{
-  await Firebase.initializeApp();
-  
-}
 
 
- */
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 

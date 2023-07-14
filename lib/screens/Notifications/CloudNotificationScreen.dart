@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:notification_app/Notification%20Services/cloud.dart';
 
 
@@ -13,17 +14,31 @@ class CloudNotification extends StatefulWidget {
 
 class _CloudNotificationState extends State<CloudNotification> {
 
-  CloudNotificationService cloudNotificationService = CloudNotificationService();
+  //CloudNotificationService cloudNotificationService = CloudNotificationService();
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    /*
     cloudNotificationService.requestPermission(context);
-    cloudNotificationService.local_initializeNotification();
     cloudNotificationService.getDeviceToken();
     cloudNotificationService.showCloudNotificationDetails();
+    cloudNotificationService.cloud_showSimpleNotifications(context);
+    cloudNotificationService.cloud_showIconNotifications(context);
 
+     */
+
+  }
+
+
+  CloudNotificaitonService cloudNotificaitonService =CloudNotificaitonService();
+  void ActionMethod(){
+
+    cloudNotificaitonService.requestPermission(context);
+    cloudNotificaitonService.getDeviceToken();
+    cloudNotificaitonService.getOnlyDetailsfromBroadcastMessageFromCloudServer();
+    cloudNotificaitonService.cloud_showCloudNotification();
 
   }
 
@@ -41,6 +56,7 @@ class _CloudNotificationState extends State<CloudNotification> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
+              SizedBox(height: screenHeight/20,),
               Stack(
                 alignment: Alignment.center,
                 children: [
@@ -90,362 +106,122 @@ class _CloudNotificationState extends State<CloudNotification> {
                   ),
                 ],
               ),
-              SizedBox(height: screenHeight/150,),
-              Row(
-                children: [
-                  const SizedBox(width: 10,),
-                  Expanded(child: Container(
-                    decoration: BoxDecoration(
-                        color: Colors.green,
-                        borderRadius: const BorderRadius.all(Radius.circular(20)),
-                        gradient: LinearGradient(
-                          colors: [
-                            Colors.blueAccent.withOpacity(0.4),
-                            Colors.lightGreenAccent.withOpacity(0.4),
-                          ],
-                          begin: Alignment.topRight,
-                          end: Alignment.bottomLeft,
-                        )
+              SizedBox(height: screenHeight/6,),
+              MaterialButton(
+                onPressed: (){
 
-                    ),
-                    width: screenWidth/2,
-                    height: screenHeight/10,
-
-                    child: Stack(
-                      alignment: AlignmentDirectional.center,
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                  showDialog(context: context, builder: (context){
+                    return  Dialog(
+                        backgroundColor: Colors.transparent,
+                        shadowColor: Colors.transparent,
+                        child: Stack(
                           children: [
-                            Text("Simple Notification",style: TextStyle(
-                              color: Colors.deepPurpleAccent.withOpacity(0.6),
-                              fontSize: 17,
-                              fontFamily: "Bold",
-                            ),),
-                            MaterialButton(
-                                onPressed: (){
-                                  cloudNotificationService.cloud_showSimpleNotifications();
-                                },
-                                color: Colors.greenAccent.withOpacity(0.7),
-                                height: screenHeight/30,
-                                minWidth: screenWidth/3,
-                                shape: const OutlineInputBorder(
-                                    borderRadius: BorderRadius.all(Radius.circular(20)),
-                                    borderSide: BorderSide(
-                                        color: Colors.transparent
-                                    )
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                SizedBox(height: 70,),
+                                Container(
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.all(Radius.circular(20))
+                                  ),
+                                  width: 360,
+                                  height: 150,
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      Text("Allow Notification",style: TextStyle(
+                                          color: Colors.green,
+                                          fontSize: 17,
+                                          fontFamily: "K-Bold"
+                                      ),),
+                                      SizedBox(height: 15,),
+                                      Row(
+                                        children: [
+                                          SizedBox(width: 10,),
+                                          Expanded(child: MaterialButton(
+                                            onPressed: (){
+                                              Navigator.pop(context);
+
+                                            },
+                                            shape: OutlineInputBorder(
+                                                borderRadius: BorderRadius.all(Radius.circular(10)),
+                                                borderSide: BorderSide(color: Colors.transparent)
+                                            ),
+                                            color: Colors.redAccent,
+                                            minWidth: 130,
+                                            height: 40,
+                                            child: Text("Dont Allow",style: TextStyle(
+                                                color: Colors.white,fontSize: 16
+                                            ),),
+                                          ),),
+                                          SizedBox(width: 6,),
+                                          Expanded(child: MaterialButton(
+                                            onPressed: (){
+                                              ActionMethod();
+                                              Navigator.pop(context);
+
+
+                                            },
+                                            shape: OutlineInputBorder(
+                                                borderRadius: BorderRadius.all(Radius.circular(10)),
+                                                borderSide: BorderSide(color: Colors.transparent)
+                                            ),
+                                            color: Colors.lightGreenAccent,
+                                            minWidth: 130,
+                                            height: 40,
+                                            child: Text("Allow",style: TextStyle(
+                                                color: Colors.white,fontSize: 16
+                                            ),),
+                                          ),),
+                                          SizedBox(width: 10,),
+                                        ],
+                                      ),
+                                      SizedBox(height: 16,)
+                                    ],
+                                  ),
+
                                 ),
-                                child: const Text("Enable Now",style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: "K-Thin"
-                                ),)
 
+                              ],
                             ),
-                          ],
-                        )
-                      ],
-                    ),
-                  ),),
-
-                  const SizedBox(width: 10,),
-                  Expanded(child: Container(
-                    decoration: BoxDecoration(
-                        color: Colors.green,
-                        borderRadius: const BorderRadius.all(Radius.circular(20)),
-                        gradient: LinearGradient(
-                          colors: [
-                            Colors.blueAccent.withOpacity(0.4),
-                            Colors.lightGreenAccent.withOpacity(0.4),
-                          ],
-                          begin: Alignment.topRight,
-                          end: Alignment.bottomLeft,
-                        )
-
-                    ),
-                    width: screenWidth/2,
-                    height: screenHeight/10,
-
-                    child: Stack(
-                      alignment: AlignmentDirectional.center,
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("Icon Notification",style: TextStyle(
-                              color: Colors.deepPurpleAccent.withOpacity(0.6),
-                              fontSize: 19,
-                              fontFamily: "Bold",
-                            ),),
-                            MaterialButton(
-                                onPressed: (){
-                                  cloudNotificationService.cloud_showIconNotifications();
-                                },
-                                color: Colors.greenAccent.withOpacity(0.7),
-                                height: screenHeight/30,
-                                minWidth: screenWidth/3,
-                                shape: const OutlineInputBorder(
-                                    borderRadius: BorderRadius.all(Radius.circular(20)),
-                                    borderSide: BorderSide(
-                                        color: Colors.transparent
-                                    )
-                                ),
-                                child: const Text("Enalbe Now",style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: "K-Thin"
-                                ),)
-
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [ CircleAvatar(
+                                    radius: 30,
+                                    backgroundImage: AssetImage(
+                                        'assets/images/permission.png'
+                                    ),
+                                  ),],),
+                                SizedBox(height: 80,)
+                              ],
                             ),
+
                           ],
                         )
-                      ],
-                    ),
-                  ),),
-                  const SizedBox(width: 10,),
+                    );
+                  });
 
-                ],
+                  },
+                color: Colors.lightGreenAccent,
+                minWidth: screenWidth/1.2,
+                height: screenHeight/15,
+                shape: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.transparent),
+                  borderRadius: BorderRadius.all(Radius.circular(10))
+                ),
+                child: Text('Enable Cloud Notification',style: TextStyle(
+                  color: Colors.deepPurpleAccent.withOpacity(0.8),fontSize: 22,fontFamily: "Bold"
+                ),),
               ),
-              const SizedBox(height: 4,),
-              Row(
-                children: [
-                  const SizedBox(width: 10,),
-                  Expanded(child: Container(
-                    decoration: BoxDecoration(
-                        color: Colors.green,
-                        borderRadius: const BorderRadius.all(Radius.circular(20)),
-                        gradient: LinearGradient(
-                          colors: [
-                            Colors.blueAccent.withOpacity(0.4),
-                            Colors.lightGreenAccent.withOpacity(0.4),
-                          ],
-                          begin: Alignment.topRight,
-                          end: Alignment.bottomLeft,
-                        )
+              SizedBox(height: screenHeight/250,),
+              const Text('Notif Channel # 3FT56gf',textAlign: TextAlign.center,style: TextStyle(color: Colors.grey,fontSize: 9),),
 
-                    ),
-                    width: screenWidth/2,
-                    height: screenHeight/10,
-
-                    child: Stack(
-                      alignment: AlignmentDirectional.center,
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("Picture Notification",style: TextStyle(
-                              color: Colors.deepPurpleAccent.withOpacity(0.6),
-                              fontSize: 19,
-                              fontFamily: "Bold",
-                            ),),
-                            MaterialButton(
-                                onPressed: (){
-
-                                },
-                                color: Colors.greenAccent.withOpacity(0.7),
-                                height: screenHeight/30,
-                                minWidth: screenWidth/3,
-                                shape: const OutlineInputBorder(
-                                    borderRadius: BorderRadius.all(Radius.circular(20)),
-                                    borderSide: BorderSide(
-                                        color: Colors.transparent
-                                    )
-                                ),
-                                child: const Text("Enable Now",style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: "K-Thin"
-                                ),)
-
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                  ),),
-
-                  const SizedBox(width: 10,),
-                  Expanded(child: Container(
-                    decoration: BoxDecoration(
-                        color: Colors.green,
-                        borderRadius: const BorderRadius.all(Radius.circular(20)),
-                        gradient: LinearGradient(
-                          colors: [
-                            Colors.blueAccent.withOpacity(0.4),
-                            Colors.lightGreenAccent.withOpacity(0.4),
-                          ],
-                          begin: Alignment.topRight,
-                          end: Alignment.bottomLeft,
-                        )
-
-                    ),
-                    width: screenWidth/2,
-                    height: screenHeight/10,
-
-                    child: Stack(
-                      alignment: AlignmentDirectional.center,
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("Zoned Notification",style: TextStyle(
-                              color: Colors.deepPurpleAccent.withOpacity(0.6),
-                              fontSize: 19,
-                              fontFamily: "Bold",
-                            ),),
-                            MaterialButton(
-                                onPressed: (){
-
-                                },
-                                color: Colors.greenAccent.withOpacity(0.7),
-                                height: screenHeight/30,
-                                minWidth: screenWidth/3,
-                                shape: const OutlineInputBorder(
-                                    borderRadius: BorderRadius.all(Radius.circular(20)),
-                                    borderSide: BorderSide(
-                                        color: Colors.transparent
-                                    )
-                                ),
-                                child: const Text("Enable Now",style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: "K-Thin"
-                                ),)
-
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                  ),),
-                  const SizedBox(width: 10,),
-
-                ],
-              ),
-              const SizedBox(height: 4,),
-              Row(
-                children: [
-                  const SizedBox(width: 10,),
-                  Expanded(child: Container(
-                    decoration: BoxDecoration(
-                        color: Colors.green,
-                        borderRadius: const BorderRadius.all(Radius.circular(20)),
-                        gradient: LinearGradient(
-                          colors: [
-                            Colors.blueAccent.withOpacity(0.4),
-                            Colors.lightGreenAccent.withOpacity(0.4),
-                          ],
-                          begin: Alignment.topRight,
-                          end: Alignment.bottomLeft,
-                        )
-
-                    ),
-                    width: screenWidth/2,
-                    height: screenHeight/10,
-
-                    child: Stack(
-                      alignment: AlignmentDirectional.center,
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("Payload Notification",style: TextStyle(
-                              color: Colors.deepPurpleAccent.withOpacity(0.6),
-                              fontSize: 19,
-                              fontFamily: "Bold",
-                            ),),
-                            MaterialButton(
-                                onPressed: (){
-
-                                },
-                                color: Colors.greenAccent.withOpacity(0.7),
-                                height: screenHeight/30,
-                                minWidth: screenWidth/3,
-                                shape: const OutlineInputBorder(
-                                    borderRadius: BorderRadius.all(Radius.circular(20)),
-                                    borderSide: BorderSide(
-                                        color: Colors.transparent
-                                    )
-                                ),
-                                child: const Text("Enable Now",style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: "K-Thin"
-                                ),)
-
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                  ),),
-
-                  const SizedBox(width: 10,),
-                  Expanded(child: Container(
-                    decoration: BoxDecoration(
-                        color: Colors.green,
-                        borderRadius: const BorderRadius.all(Radius.circular(20)),
-                        gradient: LinearGradient(
-                          colors: [
-                            Colors.blueAccent.withOpacity(0.4),
-                            Colors.lightGreenAccent.withOpacity(0.4),
-                          ],
-                          begin: Alignment.topRight,
-                          end: Alignment.bottomLeft,
-                        )
-
-                    ),
-                    width: screenWidth/2,
-                    height: screenHeight/10,
-
-                    child: Stack(
-                      alignment: AlignmentDirectional.center,
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("Navigate Notification",style: TextStyle(
-                              color: Colors.deepPurpleAccent.withOpacity(0.6),
-                              fontSize: 18,
-                              fontFamily: "Bold",
-                            ),),
-                            MaterialButton(
-                                onPressed: (){
-
-                                },
-                                color: Colors.greenAccent.withOpacity(0.7),
-                                height: screenHeight/30,
-                                minWidth: screenWidth/3,
-                                shape: const OutlineInputBorder(
-                                    borderRadius: BorderRadius.all(Radius.circular(20)),
-                                    borderSide: BorderSide(
-                                        color: Colors.transparent
-                                    )
-                                ),
-                                child: const Text("Enable Now",style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: "K-Thin"
-                                ),)
-
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                  ),),
-                  const SizedBox(width: 10,),
-
-                ],
-              ),
-              SizedBox(height: screenHeight/40,),
-              const Text('Notif Channel # 3FT56gf',textAlign: TextAlign.center,style: TextStyle(color: Colors.grey,fontSize: 9),)
 
             ],
           ),
