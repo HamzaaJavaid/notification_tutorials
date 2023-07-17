@@ -4,6 +4,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:app_settings/app_settings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:notification_app/screens/Payload%20Navigate%20Extra%20Screen.dart';
 
 
 class CloudNotificaitonService{
@@ -13,11 +14,22 @@ class CloudNotificaitonService{
   FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
   AndroidInitializationSettings androidInitializationSettings  = AndroidInitializationSettings("@mipmap/ic_launcher");
 
-  void initializeLocalNotification()async{
+  void initializeLocalNotification(BuildContext context, RemoteMessage messagePayload)async{
     InitializationSettings initializationSettings = InitializationSettings(
       android: androidInitializationSettings,
     );
-    await flutterLocalNotificationsPlugin.initialize(initializationSettings);
+    await flutterLocalNotificationsPlugin.initialize(
+        initializationSettings,
+      onDidReceiveNotificationResponse: (message){
+          if(messagePayload.data["Link"]=="www.123movies.com"){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>PayloadExtraScreen()));
+          }
+          else{
+            print('Not Navigate');
+          }
+      }
+
+    );
   }
   void local_showNotification(String title , String body){
 
@@ -254,14 +266,36 @@ class CloudNotificaitonService{
     FirebaseMessaging.onMessage.listen((event) {
       print(event.notification?.title.toString());
       print(event.notification?.body.toString());
+      print(event.data["Link"]);
     });
   }
-  void cloud_showCloudNotification(){
+  void cloud_showCloudNotification(BuildContext context){
     FirebaseMessaging.onMessage.listen((event) {
-      initializeLocalNotification();
+      initializeLocalNotification(context,event);
       local_showNotification(event.notification!.title.toString(), event.notification!.body.toString());
+
     });
   }
+  Future<void> backgroundAppNotificationPayload(BuildContext context)async{
+    FirebaseMessaging.onMessageOpenedApp.listen((event) {
+      if(event.data["Link"]=="www.123movies.com"){
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>PayloadExtraScreen()));
+      }
+    });
+
+    RemoteMessage? killedStateNotification = await FirebaseMessaging.instance.getInitialMessage();
+    if(killedStateNotification!=null){
+      if(killedStateNotification.data["Link"]=="www.123movies.com"){
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>PayloadExtraScreen()));
+      }
+    }
+
+  }
+
+
+
+
+
 
 }
 

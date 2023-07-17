@@ -20,6 +20,13 @@ class _CloudNotificationState extends State<CloudNotification> {
   void initState() {
     // TODO: implement initState
     super.initState();
+
+    cloudNotificaitonService.requestPermission(context);
+    cloudNotificaitonService.getDeviceToken();
+    cloudNotificaitonService.getOnlyDetailsfromBroadcastMessageFromCloudServer();
+    cloudNotificaitonService.cloud_showCloudNotification(context);
+    cloudNotificaitonService.backgroundAppNotificationPayload(context);
+
     /*
     cloudNotificationService.requestPermission(context);
     cloudNotificationService.getDeviceToken();
@@ -35,10 +42,7 @@ class _CloudNotificationState extends State<CloudNotification> {
   CloudNotificaitonService cloudNotificaitonService =CloudNotificaitonService();
   void ActionMethod(){
 
-    cloudNotificaitonService.requestPermission(context);
-    cloudNotificaitonService.getDeviceToken();
-    cloudNotificaitonService.getOnlyDetailsfromBroadcastMessageFromCloudServer();
-    cloudNotificaitonService.cloud_showCloudNotification();
+
 
   }
 
