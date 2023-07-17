@@ -26,7 +26,7 @@ class _CloudNotificationState extends State<CloudNotification> {
     cloudNotificaitonService.getOnlyDetailsfromBroadcastMessageFromCloudServer();
     cloudNotificaitonService.cloud_showCloudNotification(context);
     cloudNotificaitonService.backgroundAppNotificationPayload(context);
-
+  
     /*
     cloudNotificationService.requestPermission(context);
     cloudNotificationService.getDeviceToken();
