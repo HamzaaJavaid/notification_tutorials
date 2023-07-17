@@ -8,19 +8,19 @@ class PayloadExtraScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final Screen_height = MediaQuery.of(context).size.height;
-    final Screen_width = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
     return  Scaffold(
       body: SafeArea(
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              SizedBox(),
+              const SizedBox(),
               Container(
-                height: Screen_height/2.1,
-                width: Screen_width/1.5,
-                decoration: BoxDecoration(
+                height: screenHeight/2.1,
+                width: screenWidth/1.5,
+                decoration: const BoxDecoration(
                   color: Colors.lightGreenAccent,
                   borderRadius: BorderRadius.all(Radius.circular(20)),
                   boxShadow: [
@@ -38,11 +38,11 @@ class PayloadExtraScreen extends StatelessWidget {
                 ),
               
               ),
-              SizedBox(),SizedBox(),SizedBox(),
+              const SizedBox(),const SizedBox(),const SizedBox(),
               MaterialButton(
                 onPressed: (){},
-                minWidth: Screen_width/1.2,
-                height: Screen_height/13,
+                minWidth: screenWidth/1.2,
+                height: screenHeight/13,
                 color: Colors.lightBlueAccent,
                 shape: const OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(20)),

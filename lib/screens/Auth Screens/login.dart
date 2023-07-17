@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:notification_app/State Managment//Login%20Provider.dart';
 import 'package:notification_app/screens/Auth%20Screens/signUp%20Screen.dart';
+import 'package:notification_app/screens/MainDashBoard/Dashboard.dart';
 import 'package:provider/provider.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -110,7 +111,9 @@ class _SignInState extends State<SignIn> {
 
               Padding(padding: const EdgeInsets.symmetric(horizontal: 50),
                 child: MaterialButton(
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>const MainDashboard()));
+                  },
                   color: Colors.orangeAccent,
                   height: MediaQuery.of(context).size.height/16,
                   minWidth: MediaQuery.of(context).size.width/1.2,

@@ -4,6 +4,8 @@ import 'package:notification_app/State%20Managment/Account%20Create%20Provider.d
 import 'package:notification_app/screens/Auth%20Screens/login.dart';
 import 'package:provider/provider.dart';
 
+import '../MainDashBoard/Dashboard.dart';
+
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
 
@@ -169,6 +171,7 @@ class _SignUpState extends State<SignUp> {
               Padding(padding: const EdgeInsets.symmetric(horizontal: 26),
                 child: MaterialButton(
                   onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>MainDashboard()));
                   },
                   color: Colors.greenAccent,
                   shape: const OutlineInputBorder(

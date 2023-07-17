@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:notification_app/screens/Notifications/CloudNotificationScreen.dart';
+import 'package:notification_app/screens/Notifications/LocalNotificationScreen.dart';
 
 class NotificationDashboard extends StatefulWidget {
   const NotificationDashboard({super.key});
@@ -381,7 +383,10 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
                           const SizedBox(height: 10,),
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 14),
-                            child:Container(
+                            child:GestureDetector(
+                              onTap: (){
+                                Navigator.push(context,   MaterialPageRoute(builder: (context)=>const LocalNotificationScreen()));
+                              },child: Container(
                                 decoration: BoxDecoration(
                                     color: Colors.yellow.withOpacity(0.4),
                                     borderRadius:const  BorderRadius.all(Radius.circular(10))
@@ -401,6 +406,7 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
                                     ),textAlign: TextAlign.center,),
                                   ],
                                 )
+                            ),
                             ) ,),
 
                         ],
@@ -457,26 +463,31 @@ class _NotificationDashboardState extends State<NotificationDashboard> {
                           const  SizedBox(height: 10,),
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 14),
-                            child:Container(
-                                decoration:const  BoxDecoration(
-                                    color: Colors.greenAccent,
-                                    borderRadius: BorderRadius.all(Radius.circular(10))
-                                ),
-                                width: MediaQuery.of(context).size.height/4,
-                                height: MediaQuery.of(context).size.height/23,
-                                child: const Row(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    SizedBox(width: 10,),
-                                    Text('Test It Now', style: TextStyle(
-                                      color: Colors.white,
-                                      fontFamily: "K-Bold",
-                                      fontSize: 18,
+                            child:GestureDetector(
+                              onTap: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>const CloudNotification()));
+                              },
+                              child: Container(
+                                  decoration:const  BoxDecoration(
+                                      color: Colors.greenAccent,
+                                      borderRadius: BorderRadius.all(Radius.circular(10))
+                                  ),
+                                  width: MediaQuery.of(context).size.height/4,
+                                  height: MediaQuery.of(context).size.height/23,
+                                  child: const Row(
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      SizedBox(width: 10,),
+                                      Text('Test It Now', style: TextStyle(
+                                        color: Colors.white,
+                                        fontFamily: "K-Bold",
+                                        fontSize: 18,
 
-                                    ),textAlign: TextAlign.center,),
-                                  ],
-                                )
+                                      ),textAlign: TextAlign.center,),
+                                    ],
+                                  )
+                              ),
                             ) ,),
 
                         ],

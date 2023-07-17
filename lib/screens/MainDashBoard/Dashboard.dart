@@ -29,10 +29,10 @@ class MainDashboard extends StatelessWidget {
           child: const Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              FaIcon(FontAwesomeIcons.home,color: Colors.white,size: 20,),
+              FaIcon(FontAwesomeIcons.house,color: Colors.white,size: 20,),
               FaIcon(FontAwesomeIcons.bell,color: Colors.white,size: 20,),
               CircleAvatar(radius: 26,
-                backgroundColor: Colors.white,child: FaIcon(FontAwesomeIcons.add,color: Colors.orangeAccent,size: 20,),
+                backgroundColor: Colors.white,child: FaIcon(FontAwesomeIcons.plus,color: Colors.orangeAccent,size: 20,),
               ),
               FaIcon(FontAwesomeIcons.video,color: Colors.white,size: 20,),
               Icon(Icons.person,color: Colors.white,)
@@ -42,7 +42,7 @@ class MainDashboard extends StatelessWidget {
       body: Stack(
         children: [
           
-          FadeInUp(duration: Duration(seconds: 2),child: Column(
+          FadeInUp(duration: const Duration(seconds: 2),child: Column(
             children: [
               SizedBox(height: MediaQuery.of(context).size.height/10,),
               Padding(
@@ -221,7 +221,7 @@ class MainDashboard extends StatelessWidget {
                                children: [
                                  SizedBox(height: MediaQuery.of(context).size.height/20,),
                                  FaIcon(
-                                   FontAwesomeIcons.television,
+                                   FontAwesomeIcons.tv,
                                    size: MediaQuery.of(context).size.height/20,
                                    color: Colors.white,
                                  ),

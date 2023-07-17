@@ -1,7 +1,5 @@
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:notification_app/Notification%20Services/cloud.dart';
 
 
@@ -14,7 +12,6 @@ class CloudNotification extends StatefulWidget {
 
 class _CloudNotificationState extends State<CloudNotification> {
 
-  //CloudNotificationService cloudNotificationService = CloudNotificationService();
 
   @override
   void initState() {
@@ -26,25 +23,12 @@ class _CloudNotificationState extends State<CloudNotification> {
     cloudNotificaitonService.getOnlyDetailsfromBroadcastMessageFromCloudServer();
     cloudNotificaitonService.cloud_showCloudNotification(context);
     cloudNotificaitonService.backgroundAppNotificationPayload(context);
-  
-    /*
-    cloudNotificationService.requestPermission(context);
-    cloudNotificationService.getDeviceToken();
-    cloudNotificationService.showCloudNotificationDetails();
-    cloudNotificationService.cloud_showSimpleNotifications(context);
-    cloudNotificationService.cloud_showIconNotifications(context);
-
-     */
 
   }
 
 
   CloudNotificaitonService cloudNotificaitonService =CloudNotificaitonService();
-  void ActionMethod(){
 
-
-
-  }
 
 
 
@@ -124,9 +108,9 @@ class _CloudNotificationState extends State<CloudNotification> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                SizedBox(height: 70,),
+                                const SizedBox(height: 70,),
                                 Container(
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                       color: Colors.white,
                                       borderRadius: BorderRadius.all(Radius.circular(20))
                                   ),
@@ -135,54 +119,52 @@ class _CloudNotificationState extends State<CloudNotification> {
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
-                                      Text("Allow Notification",style: TextStyle(
+                                      const Text("Allow Notification",style: TextStyle(
                                           color: Colors.green,
                                           fontSize: 17,
                                           fontFamily: "K-Bold"
                                       ),),
-                                      SizedBox(height: 15,),
+                                      const SizedBox(height: 15,),
                                       Row(
                                         children: [
-                                          SizedBox(width: 10,),
+                                          const SizedBox(width: 10,),
                                           Expanded(child: MaterialButton(
                                             onPressed: (){
                                               Navigator.pop(context);
 
                                             },
-                                            shape: OutlineInputBorder(
+                                            shape: const OutlineInputBorder(
                                                 borderRadius: BorderRadius.all(Radius.circular(10)),
                                                 borderSide: BorderSide(color: Colors.transparent)
                                             ),
                                             color: Colors.redAccent,
                                             minWidth: 130,
                                             height: 40,
-                                            child: Text("Dont Allow",style: TextStyle(
+                                            child: const Text("Dont Allow",style: TextStyle(
                                                 color: Colors.white,fontSize: 16
                                             ),),
                                           ),),
-                                          SizedBox(width: 6,),
+                                          const SizedBox(width: 6,),
                                           Expanded(child: MaterialButton(
                                             onPressed: (){
-                                              ActionMethod();
+
                                               Navigator.pop(context);
-
-
                                             },
-                                            shape: OutlineInputBorder(
+                                            shape: const OutlineInputBorder(
                                                 borderRadius: BorderRadius.all(Radius.circular(10)),
                                                 borderSide: BorderSide(color: Colors.transparent)
                                             ),
                                             color: Colors.lightGreenAccent,
                                             minWidth: 130,
                                             height: 40,
-                                            child: Text("Allow",style: TextStyle(
+                                            child: const Text("Allow",style: TextStyle(
                                                 color: Colors.white,fontSize: 16
                                             ),),
                                           ),),
-                                          SizedBox(width: 10,),
+                                          const SizedBox(width: 10,),
                                         ],
                                       ),
-                                      SizedBox(height: 16,)
+                                      const SizedBox(height: 16,)
                                     ],
                                   ),
 
@@ -190,7 +172,7 @@ class _CloudNotificationState extends State<CloudNotification> {
 
                               ],
                             ),
-                            Column(
+                            const Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
@@ -215,7 +197,7 @@ class _CloudNotificationState extends State<CloudNotification> {
                 color: Colors.lightGreenAccent,
                 minWidth: screenWidth/1.2,
                 height: screenHeight/15,
-                shape: OutlineInputBorder(
+                shape: const OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.transparent),
                   borderRadius: BorderRadius.all(Radius.circular(10))
                 ),

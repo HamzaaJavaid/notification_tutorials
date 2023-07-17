@@ -1,11 +1,9 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import "package:flutter/material.dart";
 import 'package:intro_slider/intro_slider.dart';
-import 'package:notification_app/Notification%20Services/cloud.dart';
 import 'package:notification_app/State Managment//Login%20Provider.dart';
 import 'package:notification_app/State%20Managment/Account%20Create%20Provider.dart';
 import 'package:notification_app/screens/Auth%20Screens/login.dart';
-import 'package:notification_app/screens/Notifications/CloudNotificationScreen.dart';
 import 'package:provider/provider.dart';
 import 'package:timezone/data/latest_10y.dart' ;
 import 'package:firebase_core/firebase_core.dart';
@@ -49,7 +47,7 @@ class MyApp extends StatelessWidget {
     builder: (context,child){
       return const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home:CloudNotification(),
+        home:SignIn(),
       );
     },
     );
