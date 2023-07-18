@@ -22,6 +22,11 @@
  🌟iOS  
  🌟Window  
  🌟Linux  
+
+## Features:-  
+ 💥Rich Features  
+ 💥 Animations  
+ 💥Dynamic options  
   
 ## Developed By:-  👨‍💻    
  👨‍💻 Hamza Javaid     
